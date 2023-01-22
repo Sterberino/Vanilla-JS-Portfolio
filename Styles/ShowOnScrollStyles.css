@@ -1,0 +1,13 @@
+﻿.NotIntersected > *
+{
+    opacity: 0;
+    transform: translate(0, 10px);
+    transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s;
+}
+
+.Intersected > *{
+    opacity: 1;
+    transform: translate(0,0);
+    transition: opacity 0.65s ease-in-out 0s, transform 0.65s ease-in-out 0s !important;
+}
+
