@@ -238,9 +238,9 @@
 
 
 .gridItem:hover .DescriptionContainer {
-    -webkit-transform: scale(1, 2.7);
-    -ms-transform: scale(1, 2.7);
-    transform: scale(1, 2.7);
+    -webkit-transform: scale(1, 2.7) translate(0, -10%);
+    -ms-transform: scale(1, 2.7) translate(0, -10%);
+    transform: scale(1, 2.7)  translate(0, -10%);
 }
 
 .gridItem:hover .briefDescription {
