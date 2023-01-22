@@ -258,8 +258,27 @@
 
 }
 
+@media only screen and (max-device-width : 600px) {
+
+    .ResponsiveTabButton {
+        display: inline-grid;
+        pointer-events: all;
+    }
+}
+
+
+
 
 @media screen and (max-width : 480px) {
+
+    .ResponsiveTabButton {
+        display: inline-grid;
+        pointer-events: all;
+    }
+}
+
+
+@media only screen and (max-device-width : 480px) {
 
     .ResponsiveTabButton {
         display: inline-grid;

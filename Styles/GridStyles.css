@@ -215,8 +215,21 @@
         }
     }
 
+@media only screen and (max-device-width: 925px) {
+    .gridContainer {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
     @media screen and (max-width: 675px) {
         .gridContainer {
             grid-template-columns: repeat(1, 250px);
         }
     }
+
+
+@media only screen and (max-device-width: 675px) {
+    .gridContainer {
+        grid-template-columns: repeat(1, 250px);
+    }
+}

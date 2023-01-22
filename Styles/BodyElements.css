@@ -435,10 +435,12 @@ a.HeroContactButton {
     .Hero > .HeroTitle {
         font-size: 7.5vw;
     }
+}
 
-   
-
-   
+@media only screen and (max-device-width: 800px) {
+    .Hero > .HeroTitle {
+        font-size: 7.5vw;
+    }
 }
 
     @media screen and (max-width: 600px)
@@ -474,3 +476,32 @@ a.HeroContactButton {
         }
 
     }
+
+@media only screen and (max-device-width: 600px) {
+
+    .AboutSection {
+        flex-direction: column-reverse;
+    }
+
+        .AboutSection > .imgOverlay {
+            min-height: 280px;
+            min-width: 280px;
+            align-self: center;
+            justify-self: center;
+        }
+
+    .Hero > .HeroTitle {
+        font-size: 8vw;
+    }
+
+    .Text {
+        color: var(--defaultTextColor);
+    }
+
+    .Hero > .Text {
+        position: relative;
+        text-align: left;
+        text-anchor: start;
+        width: 90%;
+    }
+}
