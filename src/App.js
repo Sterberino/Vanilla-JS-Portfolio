@@ -71,7 +71,7 @@ function App()
 
 
     return (
-        <div>
+        <div style = {{overflow: 'hidden'}}>
             <div className="background"></div>
 
 
