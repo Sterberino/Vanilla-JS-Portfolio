@@ -36,7 +36,7 @@ export default {
         {
             key: 3,
             projectTitle: "This Website",
-            projectDescription: "I made this Website from scratch using HTML, CSS, and Javascript/ ES6. It was intended to not only showcase my programming skills, but develop them.",
+            projectDescription: "I made this Website from scratch using HTML, CSS, and Javascript/ ES6. I then recreated it using React.",
             projectImage: "./Images/Icon.png",
             containImage: true,
             iconsArray: [{ key : 0, iconLink: "https://github.com/Sterberino/Sterberino.github.io", iconImage: "./Images/Icon-White-Github.png" }]
