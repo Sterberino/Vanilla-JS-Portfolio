@@ -1,0 +1,30 @@
+﻿/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.NotIntersected > * {
+    opacity: 0;
+    -webkit-transform: translate(0, 10px);
+    -ms-transform: translate(0, 10px);
+    transform: translate(0, 10px);
+    -webkit-transition: opacity 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
+    transition: opacity 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
+    -o-transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s;
+    transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s;
+    transition: opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s, -webkit-transform 1s ease-in-out 0s;
+}
+
+.Intersected > * {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition: opacity 0.65s ease-in-out 0s, -webkit-transform 0.65s ease-in-out 0s !important;
+    transition: opacity 0.65s ease-in-out 0s, -webkit-transform 0.65s ease-in-out 0s !important;
+    -o-transition: opacity 0.65s ease-in-out 0s, transform 0.65s ease-in-out 0s !important;
+    transition: opacity 0.65s ease-in-out 0s, transform 0.65s ease-in-out 0s !important;
+    transition: opacity 0.65s ease-in-out 0s, transform 0.65s ease-in-out 0s, -webkit-transform 0.65s ease-in-out 0s !important;
+}

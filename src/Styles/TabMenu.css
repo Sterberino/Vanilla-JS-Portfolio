@@ -1,0 +1,1277 @@
+﻿:root {
+    --DarkestBackground: #0b0b0d;
+    --LightBackground: #141415;
+    --highlight: #ed1c24;
+    --highlightShadow: rgba(173, 151, 79, 150); /*rgba(255, 73, 68, 255)*/
+    --lightGold: rgba(173, 151, 79, 255);
+    --darkGold: rgba(142, 121, 62, 255);
+    --defaultTextColor: #d3d3d3;
+    --mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    --serif: "Times New Roman", Times, serif;
+}
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+
+body {
+    background-color: black;
+    margin: 0 0 0 0;
+    z-index: -10;
+}
+
+
+
+
+.Test {
+    background-color: rgba(0,0,0,0);
+    height: 2400px;
+    width: 50%;
+    position: relative;
+    margin: 0 0 0 0;
+    display: inline-block;
+    left: calc(50% - calc(width / 2));
+    float: left;
+}
+
+/*
+    .background:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        -webkit-box-shadow: inset 0px -4px 25px black;
+        box-shadow: inset 0px -4px 25px black;
+    }
+*/
+
+.tab {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 0vw;
+    height: 0vw;
+    position: fixed;
+    z-index: 1;
+    margin: 0 0 0 0;
+}
+
+
+
+
+.TabOpen {
+    -webkit-animation-name: TabOpenAnimation;
+    animation-name: TabOpenAnimation;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+
+.TabClose {
+    top: calc(0vh - 65px) !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.Hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+    .Hidden > * {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+
+@-webkit-keyframes HiddenAnimation {
+    0% {
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
+@keyframes HiddenAnimation {
+    0% {
+        opacity: 1;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.Shown {
+    opacity: 1;
+    pointer-events: all;
+}
+
+    .Shown > * {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+@-webkit-keyframes ShownAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes ShownAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@-webkit-keyframes TabOpenAnimation {
+    0% {
+        top: calc(0vh - 65px);
+    }
+
+    100% {
+        top: 0vh;
+    }
+}
+
+@keyframes TabOpenAnimation {
+    0% {
+        top: calc(0vh - 65px);
+    }
+
+    100% {
+        top: 0vh;
+    }
+}
+
+@-webkit-keyframes TabCloseAnimation {
+    0% {
+        top: 0vh;
+    }
+
+    100% {
+        top: calc(0vh - 65px);
+    }
+}
+
+@keyframes TabCloseAnimation {
+    0% {
+        top: 0vh;
+    }
+
+    100% {
+        top: calc(0vh - 65px);
+    }
+}
+
+ol.inline {
+    position: relative;
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    max-height: 60px;
+    display: inline-block;
+    list-style-type: decimal;
+    box-sizing: border-box;
+    float: right;
+    right: 2%;
+    left: auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+}
+
+ol li.inline {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: calc(height/2);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+a.ResumeButton {
+    display: inline-block;
+    padding: 8px;
+    /*background: #000000;*/
+    width: 80px;
+    min-width: 30px;
+    height: 40px;
+    position: relative;
+    border-radius: 1px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 2;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: 1.5px solid #d3d3d3 /*#ed1c24*/;
+    -webkit-box-shadow: 0px 0px 0px #d3d3d3;
+    box-shadow: 0px 0px 0px #d3d3d3;
+    font-size: 1em;
+    text-align: center;
+    color: var(--defaultTextColor);
+    font-family: var(--serif);
+}
+
+    a.ResumeButton:hover::after {
+        position: absolute;
+        display: block;
+        left: 0%;
+        top: 21.5%;
+        margin-left: 0 0 0 0;
+        width: 100%;
+        height: 100%;
+        content: "Resume";
+        color: transparent;
+        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(85%, white));
+        background-image: -o-linear-gradient(bottom, var(--lightGold), white 85%);
+        background-image: linear-gradient(0deg, var(--lightGold), white 85%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-attachment: local;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+
+    a.ResumeButton:hover {
+        border: 1.5px solid var(--lightGold);
+        background: #212121;
+        color: transparent;
+    }
+
+.logo {
+    font-family: var(--serif);
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    text-anchor: middle;
+    color: transparent;
+    position: relative;
+    margin: 0 0 0 0;
+    float: left;
+    width: 50px;
+    height: 50px;
+    top: 20%;
+    left: calc(0vw + 20px);
+    z-index: 5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(60%, var(--lightGold)), color-stop(90%, var(--darkGold)));
+    background-image: -o-linear-gradient(white, var(--lightGold) 60%, var(--darkGold) 90%);
+    background-image: linear-gradient(white, var(--lightGold) 60%, var(--darkGold) 90%);
+    background-attachment: local;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+}
+
+
+
+
+
+/*
+ol.ColoredNumbers {
+    list-style-image: linear-gradient(0deg, var(--lightGold), white 50%);
+}
+    */
+li.ColoredNumbers {
+    counter-increment: count-me;
+    -webkit-transition-property: color, text-shadow;
+    -o-transition-property: color, text-shadow;
+    transition-property: color, text-shadow;
+    -webkit-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    color: transparent;
+
+ 
+}
+
+
+    li.ColoredNumbers::before {
+        font-size: 1.1em;
+        content: counter(count-me) ". ";
+        display: block;
+        position: relative;
+        max-width: 0px;
+        max-height: 0px;
+        left: -1.3em;
+        top: 0.065em;
+        text-shadow: 0px 0px 0px var(--lightGold);
+        font-weight: bold;
+        font-family: var(--serif);
+        color: transparent;
+        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(50%, white));
+        background-image: -o-linear-gradient(bottom, var(--lightGold), white 50%);
+        background-image: linear-gradient(0deg, var(--lightGold), white 50%);
+        background-attachment: local;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    li.ColoredNumbers::after {
+        font-size: 1.1em;
+        font-weight: bold;
+        font-family: var(--serif);
+        position: relative;
+        display: block;
+        left: -1.3em;
+        top: -1.1em;
+        margin-left: 0 0 0 0;
+        width: 100%;
+        height: 100%;
+        content: counter(count-me) ". ";
+        color: transparent;
+        text-shadow: 0px 0px 1px var(--lightGold);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(95%, white));
+        background-image: -o-linear-gradient(bottom, var(--lightGold), white 95%);
+        background-image: linear-gradient(0deg, var(--lightGold), white 95%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-attachment: local;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+ol li.DisableNumbering {
+    list-style-type: none;
+    list-style: none !important;
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-top: calc(height/2);
+    padding-left: 7px;
+    padding-right: 7px;
+    position: relative;
+    top: -18%;
+    left: -1.5%;
+
+    
+}
+
+
+
+a.tabMenuButton {
+    position: relative;
+    font-size: 1em;
+    color: var(--defaultTextColor);
+    text-decoration: none;
+    font-family: var(--serif);
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), to(white));
+    background-image: -o-linear-gradient(bottom, var(--lightGold), white /*var(--lightGold)*/ 85%);
+    background-image: linear-gradient(0deg, var(--lightGold), white /*var(--lightGold)*/ 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+    a.tabMenuButton:hover {
+        color: transparent;
+        text-shadow: 0px 0px 1px var(--lightGold);
+    }
+
+
+
+.lowOpacity {
+    opacity: 0%;
+}
+
+.regualarOpacity {
+    opacity: 100%;
+}
+
+
+.Disabled {
+}
+
+
+@-webkit-keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes FadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes FadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes FadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.tabMenu {
+    display: inline-block;
+    background: var(--LightBackground);
+    width: 100vw;
+    height: 60px;
+    max-height: 60px;
+    min-height: 60px;
+    position: fixed;
+    top: 0vh;
+    margin: 0 0 0 0;
+    z-index: 1;
+    border-bottom: 1px solid rgb(52, 53, 54, 0.75);
+    -webkit-box-shadow: 0px 4px 10px black;
+    box-shadow: 0px 4px 10px black;
+    opacity: 1;
+
+    -webkit-transition: top ease-in-out 0.5s, border-bottom ease-in-out 0.5s, opacity ease-in-out 0.5s, -webkit-box-shadow ease-in-out 0.5s;
+    transition: top ease-in-out 0.5s, border-bottom ease-in-out 0.5s, opacity ease-in-out 0.5s, -webkit-box-shadow ease-in-out 0.5s;
+    -o-transition: top ease-in-out 0.5s, border-bottom ease-in-out 0.5s, box-shadow ease-in-out 0.5s, opacity ease-in-out 0.5s;
+    transition: top ease-in-out 0.5s, border-bottom ease-in-out 0.5s, box-shadow ease-in-out 0.5s, opacity ease-in-out 0.5s;
+    transition: top ease-in-out 0.5s, border-bottom ease-in-out 0.5s, box-shadow ease-in-out 0.5s, opacity ease-in-out 0.5s, -webkit-box-shadow ease-in-out 0.5s;
+}
+
+
+.fadeIn {
+    -webkit-animation-name: FadeIn;
+    animation-name: FadeIn;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+
+    opacity: 0;
+}
+
+.fadeOut {
+    -webkit-animation-name: FadeOut;
+    animation-name: FadeOut;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+
+    opacity: 1;
+}
+
+ 
+
+.ColoredNumbers :nth-child(1) {
+    animation-delay: 0.1s;
+    -webkit-animation-delay: 0.1s;
+}
+
+.ColoredNumbers :nth-child(2) {
+    animation-delay: 0.2s;
+    -webkit-animation-delay: 0.2s;
+}
+
+.ColoredNumbers :nth-child(3) {
+    animation-delay: 0.3s;
+    -webkit-animation-delay: 0.3s;
+}
+
+.ColoredNumbers :nth-child(4) {
+    animation-delay: 0.4s;
+    -webkit-animation-delay: 0.4s;
+}
+
+
+.ColoredNumbers > .DisableNumbering{
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+
+
+
+
+.NavBar {
+    display: none;
+}
+
+    .NavBar > ol {
+        display: none;
+        opacity: 0;
+    }
+
+.NavBarOpen {
+    display: none;
+}
+
+.NavBarClose {
+    display: none;
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    /*
+    .logo{
+        position: relative;
+        top: 10px;
+        left: -25%;
+        float: left;
+
+    }*/
+
+    .Disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0;
+        display: none;
+    }
+
+    .tabMenuButton {
+        position: relative;
+        text-align: center;
+        min-width: 80px;
+        width: 80px;
+        left: 0px;
+        padding-right: 50%;
+        margin: 0 0 0 0;
+    }
+
+
+    ol li.inline {
+        margin: 10px 15px 10px 15px;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        justify-items: center;
+        justify-items: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 20%;
+    }
+
+    ol.inline {
+        position: relative;
+        bottom: -10%;
+        -ms-flex-item-align: center;
+        align-self: center;
+        left: -5%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        height: calc(100% - 60px);
+        width: calc(25%);
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        min-height: 0px;
+        min-width: 0px;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style-type: decimal;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        clear: both;
+    }
+
+
+    ol li.DisableNumbering {
+        list-style-type: none;
+        list-style: none !important;
+        float: left;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-top: calc(height/2);
+        padding-left: 7px;
+        padding-right: 7px;
+        position: relative;
+        
+
+
+        top: 0%;
+        left: -15%;
+    }
+
+    li.ColoredNumbers
+    {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        text-anchor: start;
+    }
+
+    li.ColoredNumbers::before {
+        position: relative;
+        font-size: 0.95em;
+        text-align: center;
+        text-anchor: middle;
+        width: 100%;
+        left: 35px;
+        display: block;
+        margin-right: auto;
+        top: -1.3em;
+    }
+
+    li.ColoredNumbers::after {
+        font-size: 1em;
+        font-weight: bold;
+        font-family: var(--serif);
+        position: relative;
+        display: block;
+        left: -45px;
+        top: -1.3em;
+        text-align: center;
+        text-anchor: middle;
+        margin-left: 0 0 0 0;
+        width: 100%;
+        height: 100%;
+        content: counter(count-me) ". ";
+        color: transparent;
+        text-shadow: 0px 0.6px 1px var(--lightGold);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(90%, white));
+        background-image: -o-linear-gradient(bottom, var(--lightGold), white 90%);
+        background-image: linear-gradient(0deg, var(--lightGold), white 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-attachment: local;
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 5;
+    }
+
+    a.ResumeButton {
+        position: relative;
+        align-self: center;
+        font-size: 0.95em;
+
+    }
+
+    li.ColoredNumbers {
+        font-size: 0.85em;
+    }
+
+    .TabOpen {
+        -webkit-animation-name: TabOpenAnimation;
+        animation-name: TabOpenAnimation;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+    }
+
+    .TabClose {
+        top: calc(0vh - 65px) !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .NavBar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: var(--LightBackground);
+        width: 50vw;
+        left: 50vw;
+        -webkit-transition: -webkit-transform ease-in-out 0.7s;
+        transition: -webkit-transform ease-in-out 0.7s;
+        -o-transition: transform ease-in-out 0.7s;
+        transition: transform ease-in-out 0.7s;
+        transition: transform ease-in-out 0.7s, -webkit-transform ease-in-out 0.7s;
+        -webkit-transform: scale(0, 1);
+        -ms-transform: scale(0, 1);
+        transform: scale(0, 1);
+        -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+        transform-origin: right;
+        max-width: 100vw;
+        height: 110vh;
+        max-height: 110vh;
+        float: right;
+        right: auto;
+        position: fixed;
+        top: 0vh;
+        z-index: 1;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+        .NavBar > ol {
+            display: initial;
+            opacity: 1;
+        }
+
+    .NavBarOpen {
+        -webkit-animation-name: NavBarOpenAnimation;
+        animation-name: NavBarOpenAnimation;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+    .NavBarClose {
+        -webkit-animation-name: NavBarCloseAnimation;
+        animation-name: NavBarCloseAnimation;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-transform: scale(0, 1);
+        -ms-transform: scale(0, 1);
+        transform: scale(0, 1);
+    }
+
+
+    @-webkit-keyframes NavBarOpenAnimation {
+        0% {
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+
+        100% {
+            border-left: 1.5px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+    }
+
+
+    @keyframes NavBarOpenAnimation {
+        0% {
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+
+        100% {
+            border-left: 1.5px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+    }
+
+    @-webkit-keyframes NavBarCloseAnimation {
+        0% {
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+
+        100% {
+            border-left: 0px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+    }
+
+    @keyframes NavBarCloseAnimation {
+        0% {
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+
+        100% {
+            border-left: 0px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+    }
+
+
+    .Hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+        .Hidden > * {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
+    @-webkit-keyframes HiddenAnimation {
+        0% {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        100% {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+
+    @keyframes HiddenAnimation {
+        0% {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        100% {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    .Shown {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+        .Shown > * {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+    @-webkit-keyframes ShownAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    @keyframes ShownAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .tabMenu > ol {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
+@media only screen and (max-device-width: 600px) {
+    /*
+    .logo{
+        position: relative;
+        top: 10px;
+        left: -25%;
+        float: left;
+
+    }*/
+
+    .Disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0;
+        display: none;
+    }
+
+    .tabMenuButton {
+        position: relative;
+        text-align: center;
+        min-width: 80px;
+        width: 80px;
+        left: 0px;
+        padding-right: 50%;
+        margin: 0 0 0 0;
+    }
+
+    ol.inline {
+        position: relative;
+        bottom: -10%;
+        -ms-flex-item-align: center;
+        align-self: center;
+        left: -5%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        height: calc(100% - 60px);
+        width: calc(25%);
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+        min-height: 0px;
+        min-width: 0px;
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style-type: decimal;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+        -moz-box-sizing: border-box; /* Firefox, other Gecko */
+        clear: both;
+    }
+
+    li.ColoredNumbers {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        text-anchor: start;
+    }
+
+        li.ColoredNumbers::before {
+            position: relative;
+            font-size: 0.95em;
+            text-align: center;
+            text-anchor: middle;
+            width: 100%;
+            left: 35px;
+            display: block;
+            margin-right: auto;
+            top: -1.3em;
+        }
+
+        li.ColoredNumbers::after {
+            font-size: 1em;
+            font-weight: bold;
+            font-family: var(--serif);
+            position: relative;
+            display: block;
+            left: -45px;
+            top: -1.3em;
+            text-align: center;
+            text-anchor: middle;
+            margin-left: 0 0 0 0;
+            width: 100%;
+            height: 100%;
+            content: counter(count-me) ". ";
+            color: transparent;
+            text-shadow: 0px 0.6px 1px var(--lightGold);
+            background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(90%, white));
+            background-image: -o-linear-gradient(bottom, var(--lightGold), white 90%);
+            background-image: linear-gradient(0deg, var(--lightGold), white 90%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            background-attachment: local;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: 5;
+        }
+
+    a.ResumeButton {
+        position: relative;
+        align-self: center;
+        font-size: 0.95em;
+        left: -5px;
+    }
+
+    li.ColoredNumbers {
+        font-size: 0.85em;
+    }
+
+    .TabOpen {
+        -webkit-animation-name: TabOpenAnimation;
+        animation-name: TabOpenAnimation;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+    }
+
+    .TabClose {
+        top: calc(0vh - 65px) !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .NavBar {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background: var(--LightBackground);
+        width: 50vw;
+        left: 50vw;
+        -webkit-transition: -webkit-transform ease-in-out 1s;
+        transition: -webkit-transform ease-in-out 1s;
+        -o-transition: transform ease-in-out 1s;
+        transition: transform ease-in-out 1s;
+        transition: transform ease-in-out 1s, -webkit-transform ease-in-out 1s;
+        -webkit-transform: scale(0, 1);
+        -ms-transform: scale(0, 1);
+        transform: scale(0, 1);
+        -webkit-transform-origin: right;
+        -ms-transform-origin: right;
+        transform-origin: right;
+        max-width: 100vw;
+        height: 110vh;
+        max-height: 110vh;
+        float: right;
+        right: auto;
+        position: fixed;
+        top: 0vh;
+        z-index: 1;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+        .NavBar > ol {
+            display: initial;
+            opacity: 1;
+        }
+
+    .NavBarOpen {
+        -webkit-animation-name: NavBarOpenAnimation;
+        animation-name: NavBarOpenAnimation;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+
+    .NavBarClose {
+        -webkit-animation-name: NavBarCloseAnimation;
+        animation-name: NavBarCloseAnimation;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+        -webkit-animation-duration: 0.75s;
+        animation-duration: 0.75s;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        -webkit-transform: scale(0, 1);
+        -ms-transform: scale(0, 1);
+        transform: scale(0, 1);
+    }
+
+
+    @-webkit-keyframes NavBarOpenAnimation {
+        0% {
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+
+        100% {
+            border-left: 1.5px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+    }
+
+
+    @keyframes NavBarOpenAnimation {
+        0% {
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+
+        100% {
+            border-left: 1.5px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+    }
+
+    @-webkit-keyframes NavBarCloseAnimation {
+        0% {
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+
+        100% {
+            border-left: 0px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+    }
+
+    @keyframes NavBarCloseAnimation {
+        0% {
+            -webkit-box-shadow: -4px 0px 10px black;
+            box-shadow: -4px 0px 10px black;
+        }
+
+        100% {
+            border-left: 0px solid rgb(52, 53, 54, 0.75);
+            -webkit-box-shadow: 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px transparent;
+        }
+    }
+
+
+    .Hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+        .Hidden > * {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+
+    @-webkit-keyframes HiddenAnimation {
+        0% {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        100% {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+
+    @keyframes HiddenAnimation {
+        0% {
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        100% {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
+    .Shown {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+        .Shown > * {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+    @-webkit-keyframes ShownAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    @keyframes ShownAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+
+    .tabMenu > ol {
+        display: none;
+        opacity: 0;
+    }
+}
+
+
