@@ -19,8 +19,8 @@ export default {
             projectImage: `${process.env.PUBLIC_URL}/Images/FitnessBuddy.png`,
             containImage: false,
             iconsArray: [
-                { key : 0, iconLink: "https://fitness-buddy.herokuapp.com/", iconImage: `${process.env.PUBLIC_URL}/Images/NewWindowIcon.png` }, 
-                { key : 1, iconLink: "https://github.com/Sterberino/FitnessBuddy", iconImage: `${process.env.PUBLIC_URL}/Images/Icon-White-Github.png` }
+                { key : 0, iconLink: "https://github.com/Sterberino/FitnessBuddy", iconImage: `${process.env.PUBLIC_URL}/Images/Icon-White-Github.png` },
+                { key : 1, iconLink: "https://fitness-buddy.herokuapp.com/", iconImage: `${process.env.PUBLIC_URL}/Images/NewWindowIcon.png` }
             ]
         },
         {
