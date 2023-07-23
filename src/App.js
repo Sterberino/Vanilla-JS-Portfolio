@@ -76,8 +76,8 @@ function App()
 
 
             <div className="tab">
-                <Header Resume={`${process.env.PUBLIC_URL}/ZacharyRuizResume.pdf`} navbarOpen={navbarOpen} scrollingUp={scrollingUp} setScrollingUp={SetScrollingUp} />
-                <Navbar Resume={`${process.env.PUBLIC_URL}/ZacharyRuizResume.pdf`} navbarOpen={navbarOpen} />
+                <Header Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} navbarOpen={navbarOpen} scrollingUp={scrollingUp} setScrollingUp={SetScrollingUp} />
+                <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} navbarOpen={navbarOpen} />
                 <NavbarButton navbarOpen={navbarOpen} setNavbarOpen={ToggleNavbar} scrollingUp={scrollingUp} />
             </div>
 
