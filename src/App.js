@@ -18,12 +18,18 @@ import RotatingBackgroundGradientButton from './Components/RotatingBackgroundGra
 
 import Particles from 'react-particles';
 import BackgroundSpotlightButton from './Components/BackgroundSpotlightButton';
+import useWindowSize from './Hooks/useWindowSize';
+import Sidebar from './Components/Sidebar';
+
+const SidebarContext = React.createContext();
+export {SidebarContext}
 
 function App()
 {
-    const [lastWidth, setLastWidth] = React.useState(window.innerWidth);
-    const [navbarOpen, setNavbarOpen] = React.useState(false);
-    const [scrollingUp, setScrollingUp] = React.useState(true);
+    const [sidebarOpen, setSidebarOpen] = React.useState(false);
+
+    const size = useWindowSize();
+    const [lastSize, setLastSize] = React.useState(size.x);
 
     React.useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -43,46 +49,42 @@ function App()
             hiddenElements.forEach((el) => observer.unobserve(el));
         })
     }, [])
+
     React.useEffect(() => {
         function handleResize(){
-
-            if (window.innerWidth >= 600 && lastWidth < 600) {
-                setNavbarOpen(false);
+            console.log(size)
+            console.log(lastSize)
+            if(size.x !== lastSize)
+            {
+                if (size.x >= 640 && lastSize < 640) {
+                    console.log("Changing Sidebar State");
+                    setSidebarOpen(false);
+                }
+                else if (size.x < 640 && lastSize >= 640) {
+                    console.log("Changing Sidebar State");
+        
+                    setSidebarOpen(false);
+                }        
             }
-            else if (window.innerWidth < 600 && lastWidth >= 600) {
-                setNavbarOpen(false);
-            }
-            setLastWidth(window.innerWidth);
+            setLastSize(size.x);
         }
+    
+        handleResize()
+    }, [size])
 
-        window.onresize = handleResize;
-        window.addEventListener("resize", handleResize);
-
-        return (
-            window.removeEventListener("resize", handleResize)
-        )
-    }, [navbarOpen])
-
-    function SetScrollingUp(value) {
-        setScrollingUp(value);
-    }
-    function ToggleNavbar()
-    {
-        setNavbarOpen(!navbarOpen);
-    }
-
+    
+ 
 
     return (
         <div style = {{overflow: 'hidden'}}>
-            <div className="background"></div>
-
-
-           
-            <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} navbarOpen={navbarOpen} />
-                
-
+            <div className="background"></div>           
+            
+            <SidebarContext.Provider value={{sidebarOpen: sidebarOpen, setSidebarOpen: setSidebarOpen}}>
+                <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} />
+                <Sidebar />
+            </SidebarContext.Provider>
             <div className="Hero NotIntersected">
-                <div className='HeroBackground'></div>
+                <div className='Downlit-Radial-Background'></div>
                 <div className="Text">Hello, my name is</div>
                 <h1 className="GradientText HeroTitle">Zachary Ruiz</h1>
                 <div className="Text"> I am a software engineer with a passion for solving problems through programming.</div>

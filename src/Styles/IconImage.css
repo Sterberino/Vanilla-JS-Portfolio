@@ -11,12 +11,10 @@
     background-position: center;
     background-repeat: no-repeat;
     
-    -webkit-mask-image: url("");
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
 
-    mask-image: url("");
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;

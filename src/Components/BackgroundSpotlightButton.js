@@ -54,6 +54,7 @@ export default function BackgroundSpotlightButton({HandleClick, style, text})
         }}
     >
         {text !== null && text !== undefined && <div>{`${text}`}</div>}
+        <div className="background-spotlight-button-shadow"></div>
     </div>
     )
 }
