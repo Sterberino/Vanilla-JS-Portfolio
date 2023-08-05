@@ -2,7 +2,7 @@
 
 :root {
     --DarkestBackground: #0b0b0d;
-    --LightBackground: #141414;
+    --LightBackground: rgba(2, 6, 23,1);
     --highlight: #ed1c24;
     --highlightShadow: rgba(173, 151, 79, 150); /*rgba(255, 73, 68, 255)*/
     --lightGold: rgba(173, 151, 79, 255);
@@ -315,8 +315,8 @@ a.HeroContactButton {
 .card {
     z-index: 0;
     position: relative;
-    background: -o-linear-gradient(45deg, rgba(52,53,54,1) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, rgba(52,53,54,1) 100%);
-    background: linear-gradient(45deg, rgba(52,53,54,1) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, rgba(52,53,54,1) 100%);
+    background: -o-linear-gradient(45deg, var(--slate-700) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, var(--slate-700) 100%);
+    background: linear-gradient(45deg, var(--slate-700) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, var(--slate-700) 100%);
     border-radius: 2px;
     width: 200px;
     height: 200px;
@@ -331,8 +331,8 @@ a.HeroContactButton {
 }
 
     .card:hover {
-        background: -o-linear-gradient(45deg, rgba(60,60,60,1) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, rgba(60,60,60,1) 100%);
-        background: linear-gradient(45deg, rgba(60,60,60,1) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, rgba(60,60,60,1) 100%);
+        background: -o-linear-gradient(45deg, var(--slate-700) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, var(--slate-700) 100%);
+        background: linear-gradient(45deg, var(--slate-700) 0%, rgba(20,20,20,0) 40%, rgba(20,20,20,0) 60%, var(--slate-700) 100%);
         -webkit-filter: brightness(110%);
         filter: brightness(110%);
     }
@@ -344,9 +344,9 @@ a.HeroContactButton {
     .card::before {
         z-index: -1;
         content: '';
-        background: -webkit-gradient(linear, left bottom, left top, from(var(--LightBackground)), color-stop(80%, var(--LightBackground)), to(rgba(25,25,25,1)));
-        background: -o-linear-gradient(bottom, var(--LightBackground) 0%, var(--LightBackground) 80%, rgba(25,25,25,1) 100%);
-        background: linear-gradient(0deg, var(--LightBackground) 0%, var(--LightBackground) 80%, rgba(25,25,25,1) 100%);
+        background: -webkit-gradient(linear, left bottom, left top, from(var(--slate-950)), color-stop(80%, var(--slate-950)), to(rgba(25,25,25,1)));
+        background: -o-linear-gradient(bottom, var(--slate-950) 0%, var(--slate-950) 80%, var(--slate-950) 100%);
+        background: linear-gradient(0deg, var(--slate-950) 0%, var(--slate-950) 80%, var(--slate-950) 100%);
         border-radius: 2px;
         width: calc(100% - 3px);
         height: calc(100% - 3px);
@@ -437,7 +437,7 @@ a.HeroContactButton {
     min-width: 250px;
     border-radius: 5px;
     z-index: 0;
-    border: 1px solid var(--lightGold);
+    border: 1px solid var(--slate-400);
     opacity: 1;
 }
 

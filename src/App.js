@@ -52,8 +52,6 @@ function App()
 
     React.useEffect(() => {
         function handleResize(){
-            console.log(size)
-            console.log(lastSize)
             if(size.x !== lastSize)
             {
                 if (size.x >= 640 && lastSize < 640) {

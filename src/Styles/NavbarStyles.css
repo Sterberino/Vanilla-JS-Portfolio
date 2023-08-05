@@ -196,3 +196,54 @@ HTML Below:
 
   TODO: Rename a, li, and ul to specific classes. Add the background radial gradient as a separate element within the li element.
 */
+
+
+@media screen and (max-width: 640px) {
+    ul.nav-elements{
+      flex-direction: column;
+      font-family: var(--mono);
+    }
+
+    ul.nav-elements *{
+      max-height: 45px;
+      flex-direction: column;
+    }
+
+    ul.nav-elements > li.nav-element{
+      padding: 10px;
+    }
+
+    ul.nav-elements > li.nav-element > a.nav-anchor{
+      overflow-x: visible;
+      overflow-y: visible;
+    }
+
+    a.nav-anchor::before{
+      top: 35%;
+    }
+}
+
+@media only screen and (max-device-width: 640px) {
+  ul.nav-elements{
+    flex-direction: column;
+    font-family: var(--mono);
+  }
+
+  ul.nav-elements *{
+    max-height: 45px;
+    flex-direction: column;
+  }
+
+  ul.nav-elements > li.nav-element{
+    padding: 10px;
+  }
+
+  ul.nav-elements > li.nav-element > a.nav-anchor{
+    overflow-x: visible;
+    overflow-y: visible;
+  }
+
+  a.nav-anchor::before{
+    top: 35%;
+  }
+}
