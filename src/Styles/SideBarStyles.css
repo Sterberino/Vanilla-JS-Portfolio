@@ -24,6 +24,10 @@
     pointer-events: none;
 }
 
+.sidebarClosed *{
+    pointer-events: none;
+}
+
 .sidebarClosed > .sidebar-buttons-wrapper
 {
     opacity: 0;
