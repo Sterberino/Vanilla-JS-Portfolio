@@ -1,0 +1,197 @@
+@import './Constants.css';
+
+body {
+  background-color: rgba(0,0,0,1);
+
+
+  padding: 0%;
+  vertical-align: top;
+  overflow-x: hidden;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar{    
+    position: fixed;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 70px;
+    width: 100%;
+    margin: 0px;
+    left: 0px;
+    right: auto;
+    
+    z-index: 10;
+
+    top: 0px;
+    backdrop-filter: blur(10px);
+    padding-left: 50px;
+    padding-right: 50px;
+
+    box-sizing: border-box;
+
+    transition: top 0.3s ease-in-out;
+    font-family: var(--mono);
+  }
+
+  .navbar *{
+    max-height: 100%;
+  }
+  
+  .navbar::after{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    transform: scale(1) translateY(50%);
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    height: 1px;
+    background: linear-gradient(90deg,rgba(40,37,44,0),rgba(40,37,44,.7) 20%,rgba(40,37,44,.7) 80%,rgba(40,37,44,0));
+  }
+
+
+  ul.nav-elements{
+    position: relative;
+    display:flex;
+    flex-direction:row;
+    margin: 0px;
+    height: 100%;
+    width: fit-content;
+    justify-content: center;
+    padding-left: 0px;
+    }
+
+  ul.nav-elements > li.nav-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-right: 10px;
+  height: 100%;
+
+}
+
+ul.nav-elements > li.nav-element:after {
+backface-visibility: hidden;
+position: absolute;
+z-index: 3;
+bottom: 0;
+  content: '';
+  display: block;
+  margin: auto;
+  height: 1px;
+  width: 0px;
+  left: 50%;
+opacity: 0;
+
+box-sizing: border-box;
+  background: linear-gradient(90deg, transparent 0%, var(--blue-700) 25%, var(--blue-400) 50%, var(--blue-700) 75%, transparent 100%);
+  transition: width .4s ease-in-out, left .4s ease-in-out, background-color .3s ease, opacity 0.2s ease;
+transform: scale(1) translateY(50%);
+}
+
+ul.nav-elements > li.nav-element:hover:after{
+position: absolute;
+bottom: 0;
+  width: 100%;
+z-index: 3;
+left: 0%;
+    opacity: 1;
+}
+
+a.nav-anchor{
+  font-family: var(---mono);
+  font-size: var(--default-font-size);
+  height: 100%;
+  line-height: 70px;
+  text-align: center;
+  color: var(--white2);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.4s ease;
+
+  overflow-x:visible; 
+  overflow-y:clip;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+a.nav-anchor::before{
+  left: -15px;
+  right: -15px;
+  width: calc(30px + 100%);
+  height: 100%;
+  top: 50%;
+  transform: translate(0, 10%);
+  filter: blur(30px) brightness(1.3);
+  background: var(--blue-700);
+  transition: opacity .3s ease-in-out,transform .3s ease-in-out;
+  position: absolute;
+  transition-delay: .1s;
+  z-index: 2;
+  backface-visibility: hidden;
+  opacity: 0;
+  content: "";
+}
+
+ul.nav-elements > li.nav-element:hover > a.nav-anchor{
+  color: var(--white1);
+}
+
+ul.nav-elements > li.nav-element:hover > a.nav-anchor::before{
+  opacity: 0.35;
+}
+
+
+.navbar-logo{
+  aspect-ratio: 1/ 1;
+  height: 100%;
+  background-size: 12px 12px;
+  background-image:
+    linear-gradient(to right, #b1b1b12e 1px, transparent 1px),
+    linear-gradient(to bottom, #b1b1b12e 1px, transparent 1px);
+
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);
+
+}
+
+.background-grid{
+  background-size: 12px 12px;
+  background-image:
+    linear-gradient(to right, #b1b1b12e 1px, transparent 1px),
+    linear-gradient(to bottom, #b1b1b12e 1px, transparent 1px);
+
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);
+
+}
+
+.li-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+HTML Below:
+
+<div class = "navbar">
+<ul class = "nav-elements">
+  <li><a class = "nav-anchor" href="#">About</a></li>
+  <li><a class = "nav-anchor" href="#">Experience</a></li>
+  <li><a class = "nav-anchor" href="#">Projects</a></li>
+  <li><a class = "nav-anchor" href="#">Contact</a></li>
+</ul>
+  </div>
+
+
+  TODO: Rename a, li, and ul to specific classes. Add the background radial gradient as a separate element within the li element.
+*/

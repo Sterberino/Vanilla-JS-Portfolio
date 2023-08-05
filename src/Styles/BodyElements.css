@@ -1,13 +1,21 @@
-﻿:root {
+﻿@import './Constants.css';
+
+:root {
     --DarkestBackground: #0b0b0d;
     --LightBackground: #141414;
     --highlight: #ed1c24;
     --highlightShadow: rgba(173, 151, 79, 150); /*rgba(255, 73, 68, 255)*/
     --lightGold: rgba(173, 151, 79, 255);
     --darkGold: rgba(142, 121, 62, 255);
-    --defaultTextColor: #d3d3d3;
-    --mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+    --defaultTextColor: var(--white2);
+
     --serif: "Times New Roman", Times, serif;
+    --sans: 'Calibre','Inter','San Francisco','SF Pro Text',-apple-system,system-ui,sans-serif;
+
+    --text-gradient-highlight: white;
+    --light-text-gradient: var(--slate-400);
+    --dark-text-gradient: var(--slate-200);
+
 }
 
 /*
@@ -25,7 +33,7 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: var(--DarkestBackground);
+    background-color: var(--slate-1000);
     background-size: cover;
     margin: 0 0 0 0;
     z-index: 0;
@@ -47,9 +55,9 @@
         position: absolute;
         -webkit-box-shadow: 4px 4px 15px black;
         box-shadow: 4px 4px 15px black;
-        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, var(--darkGold)), color-stop(50%, var(--lightGold)), color-stop(99.5%, var(--lightGold)), to(white));
-        background-image: -o-linear-gradient(bottom, var(--darkGold) 20%, var(--lightGold) 50%, var(--lightGold) 99.5%, white 100%);
-        background-image: linear-gradient(0deg, var(--darkGold) 20%, var(--lightGold) 50%, var(--lightGold) 99.5%, white 100%);
+        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, var(--dark-text-gradient)), color-stop(50%, var(--light-text-gradient)), color-stop(99.5%, var(--light-text-gradient)), to(var(--text-gradient-highlight)));
+        background-image: -o-linear-gradient(bottom, var(--dark-text-gradient) 20%, var(--light-text-gradient) 50%, var(--light-text-gradient) 99.5%, var(--text-gradient-highlight) 100%);
+        background-image: linear-gradient(0deg, var(--dark-text-gradient) 20%, var(--light-text-gradient) 50%, var(--light-text-gradient) 99.5%, var(--text-gradient-highlight) 100%);
     }
 
 
@@ -90,9 +98,9 @@
     margin: 0% 0% 0% 0%;
     top: 15%;
     color: transparent;
-    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(50%, var(--lightGold)), color-stop(85%, white)) !important;
-    background-image: -o-linear-gradient(bottom, var(--lightGold) 0%, var(--lightGold) 50%, white 85%) !important;
-    background-image: linear-gradient(0deg, var(--lightGold) 0%, var(--lightGold) 50%, white 85%) !important;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--light-text-gradient)), color-stop(50%, var(--light-text-gradient)), color-stop(85%, var(--text-gradient-highlight))) !important;
+    background-image: -o-linear-gradient(bottom, var(--light-text-gradient) 0%, var(--light-text-gradient) 50%, var(--text-gradient-highlight) 85%) !important;
+    background-image: linear-gradient(0deg, var(--light-text-gradient) 0%, var(--light-text-gradient) 50%, var(--text-gradient-highlight) 85%) !important;
     -webkit-background-clip: text;
     background-clip: text;
     background-attachment: local;
@@ -101,15 +109,14 @@
     display: inline-block !important;
     z-index: 0;
     position: relative;
-    font-family: var(--serif);
+    font-family: var(--sans);
 }
 
 
 
 .Hero {
     position: relative;
-    margin: 33vh 0 calc(33vh + 1px) 0;
-    left: 10%;
+    
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -119,13 +126,13 @@
     flex-flow: column;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-box-pack: left;
-    -ms-flex-pack: left;
-    justify-content: left;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     gap: 0px;
-    height: 60vh;
+    height: 100vh;
     min-height: 500px;
-    width: 80%;
+    width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
     padding: 5px;
@@ -133,24 +140,60 @@
     min-height: -moz-max-content;
     min-height: max-content;
     min-width: 0;
+    
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.Hero > * {
+    width: 100%;
+}
+
+.Hero > .HeroBackground{
+    z-index: inherit;
+
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+
+    background-image: radial-gradient(circle at 50% 0%, var(--slate-50) 0%, transparent 60%);
+    opacity: 0;
+
+    animation-name: animate-hero-background;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes animate-hero-background {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.1;
+    }
 }
 
     .Hero > .GradientText {
-        text-align: left;
+        text-align: center;
         text-anchor: start;
         margin: 0 0 0 0;
         min-height: -webkit-max-content;
         min-height: -moz-max-content;
-        min-height: max-content;
+        min-height: max-content;    
+        font-family: var(--sans);
     }
 
     .Hero > h2.GradientText {
         position: relative;
         -ms-grid-row: 2;
         grid-row: 2;
-        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(45%, var(--lightGold)), color-stop(75%, white));
-        background-image: -o-linear-gradient(bottom, var(--lightGold) 0%, var(--lightGold) 45%, white 75%);
-        background-image: linear-gradient(0deg, var(--lightGold) 0%, var(--lightGold) 45%, white 75%);
+        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--light-text-gradient)), color-stop(45%, var(--light-text-gradient)), color-stop(75%, var(--text-gradient-highlight)));
+        background-image: -o-linear-gradient(bottom, var(--light-text-gradient) 0%, var(--light-text-gradient) 45%, var(--text-gradient-highlight) 75%);
+        background-image: linear-gradient(0deg, var(--light-text-gradient) 0%, var(--light-text-gradient) 45%, var(--text-gradient-highlight) 75%);
         background-size: cover;
         background-attachment: inherit;
         height: 80%;
@@ -162,7 +205,7 @@
     .Hero > .HeroTitle {
         position: relative;
         margin: 5px 0px 10px 0px;
-        font-size: 5vw;
+        font-size: 5.5vw;
     }
 
 .HeroTitle.GradientText {
@@ -191,13 +234,13 @@
 .Hero > .Text {
     margin: -5px 0px -5px 0px;
     position: relative;
-    text-align: left;
+    text-align: center;
     text-anchor: start;
     font-size: 1.2em;
     color: var(--defaultTextColor);
     -ms-grid-row: 2;
     grid-row: 2;
-    width: 50%;
+    width: 40%;
 }
 
 .Hero > a.HeroContactButton {
@@ -227,7 +270,7 @@ a.HeroContactButton {
     color: var(--defaultTextColor);
     text-decoration: none;
     margin: 20px 0px 0px 0px;
-    font-family: var(--serif);
+    font-family: var(--sans);
 }
 
     a.HeroContactButton:hover {
@@ -443,9 +486,9 @@ a.HeroContactButton {
     -ms-flex-positive: 0.7;
     flex-grow: 0.7;
     color: var(--defaultTextColor);
-    font: var(--serif);
+    font: var(--sans);
     font-size: 1.2em;
-    font-family: var(--serif);
+    font-family: var(--sans);
 
 }
 
@@ -496,7 +539,8 @@ a.HeroContactButton {
 
     .Text {
         color: var(--defaultTextColor);
-        font-family: var(--serif);
+        font-family: var(--mono);
+        font: var(--mono);
     }
 
 @media screen and (max-width: 1000px) {
@@ -507,12 +551,16 @@ a.HeroContactButton {
         width: 60vw;
     }
 
+    .Hero > .HeroTitle{
+        font-size: 6vw;
+    }
+
     .Hero > .Text {
         position: relative;
-        text-align: left;
+        
         text-anchor: start;
         color: var(--defaultTextColor);
-        width: 70%;
+        width: 40%;
     }
 }
 
@@ -557,15 +605,14 @@ a.HeroContactButton {
         }
 
     .Hero > .HeroTitle {
-        font-size: 8vw;
+        font-size: 10vw;
     }
 
 
     .Hero > .Text {
         position: relative;
-        text-align: left;
         text-anchor: start;
-        width: 90%;
+        width: 65%;
     }
 }
 
@@ -598,8 +645,7 @@ a.HeroContactButton {
 
     .Hero > .Text {
         position: relative;
-        text-align: left;
         text-anchor: start;
-        width: 90%;
+        width: 50%;
     }
 }

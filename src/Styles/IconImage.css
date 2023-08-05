@@ -1,0 +1,155 @@
+@import './Constants.css';
+
+.icon-button{
+    position: absolute;
+    z-index: 2;
+
+    aspect-ratio: 1 / 1;
+    height: 100%;
+
+    background-image: linear-gradient(0deg, var(--slate-400) 0%, var(--slate-400) 45%, var(--slate-200) 75%);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    -webkit-mask-image: url("");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    mask-image: url("");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    transition: all 0.25s ease;
+    filter:brightness(1);
+}
+
+.icon-button:hover
+{
+    filter: brightness(1.1);
+}
+
+.icon-button-fill{
+    position: absolute;
+    z-index: 2;
+
+    aspect-ratio: 1 / 1;
+    height: 100%;
+
+    background-image: linear-gradient(0deg, var(--blue-200) 0%, var(--blue-200) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: brightness(1.1);
+
+    -webkit-mask-image: url("");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+}
+
+.icon-button-shimmer{
+    position: absolute;
+    z-index: 3;
+    
+    aspect-ratio: 1 / 1;
+    height: 100%;
+
+    background-position: 0% 0%;
+    background-image: linear-gradient(110deg,rgba(0,0,0,0), 45%, var(--slate-300), 55%,rgba(0,0,0,0));
+    background-size: 200% 100%;
+
+    transition: all 0.25s ease;
+    opacity: 0;
+
+    animation-name: background-shine;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.icon-shimmer-always > .icon-button-shimmer{
+    opacity: 1;
+}
+
+.icon-button-shimmer:hover{
+    opacity: 1;
+}
+
+@keyframes background-shine{
+    from {
+      background-position: 100% 0%;
+    }
+    to {
+      background-position: -100% 0%;
+    }
+  }
+
+.icon-button-border{
+    --dropdown-shadow-border: var(--slate-400);
+
+    position: relative;
+    aspect-ratio: 1 / 1;
+    height: 35px;
+
+    z-index: 1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("");
+    
+    cursor: pointer;
+
+    -webkit-filter: 
+        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
+    -moz-filter: 
+        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
+    -ms-filter: 
+        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
+    -o-filter: 
+        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
+        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
+    transition: filter 0.4s ease;
+}
+
+
+
+
+.icon-button-border:hover{
+    --dropdown-shadow-border-hovered: var(--slate-200);
+
+    -webkit-filter: 
+    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
+-moz-filter: 
+    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
+-ms-filter: 
+    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
+-o-filter: 
+    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
+
+}

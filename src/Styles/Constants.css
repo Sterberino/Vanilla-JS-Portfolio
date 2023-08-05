@@ -1,0 +1,48 @@
+:root{
+    --slate-50: rgb(248, 250, 252);
+    --slate-100: rgb(241, 245, 249);
+    --slate-200: rgb(226, 232, 240);
+    --slate-300: rgb(203, 213, 225);
+    --slate-400: rgb(148, 163, 184);
+    --slate-500: rgb(100, 116, 139);
+    --slate-600: rgb(71, 85, 105);
+    --slate-700: rgb(51, 65, 85);
+    --slate-800: rgb(30, 41, 59);
+    --slate-900: rgb(15, 23, 42);
+    --slate-950: rgb(2, 6, 23);
+    --slate-1000: rgb(2, 5, 15);
+    
+    --white1: rgba(236, 241, 243, 1);
+    --white2: rgba(195, 200, 202, 1);
+    
+    --sky-50: rgb(240 249 255);
+    --sky-100: rgb(224 242 254);  
+    --sky-200: rgb(186 230 253);
+    --sky-300: rgb(125 211 252);
+    --sky-400: rgb(56 189 248);
+    --sky-500: rgb(14 165 233);
+    --sky-600: rgb(2 132 199);
+    --sky-700: rgb(3 105 161);
+    --sky-800: rgb(7 89 133);
+    --sky-900: rgb(12 74 110);
+    --sky-950: rgb(8 47 73);
+
+    --blue-50: rgb(239 246 255);
+    --blue-100: rgb(219 234 254);
+    --blue-200	: rgb(191 219 254);
+    --blue-300	: rgb(147 197 253);
+    --blue-400	: rgb(96 165 250);
+    --blue-500	: rgb(59 130 246);
+    --blue-600	: rgb(37 99 235);
+    --blue-700	: rgb(29 78 216);
+    --blue-800	: rgb(30 64 175);
+    --blue-900	: rgb(30 58 138);
+    --blue-950	: rgb(23 37 84);
+    
+    --button-gradient-lighter: rgba(100, 116, 139,1);
+    --button-gradient-darker: rgba(71, 85, 105,1);
+    --dropdown-shadow-border: var(--slate-300);
+    --dropdown-shadow-border-hovered: var(--slate-200);
+    --default-font-size: 0.9em;
+    --mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+}

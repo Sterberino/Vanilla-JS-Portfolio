@@ -14,8 +14,10 @@ import ProjectsGrid from "./Components/ProjectsGrid.js"
 import NavbarButton from "./Components/NavbarButton.js"
 import Header from "./Components/Header.js"
 import Navbar from "./Components/Navbar.js"
+import RotatingBackgroundGradientButton from './Components/RotatingBackgroundGradientButton';
 
 import Particles from 'react-particles';
+import BackgroundSpotlightButton from './Components/BackgroundSpotlightButton';
 
 function App()
 {
@@ -75,17 +77,23 @@ function App()
             <div className="background"></div>
 
 
-            <div className="tab">
-                <Header Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} navbarOpen={navbarOpen} scrollingUp={scrollingUp} setScrollingUp={SetScrollingUp} />
-                <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} navbarOpen={navbarOpen} />
-                <NavbarButton navbarOpen={navbarOpen} setNavbarOpen={ToggleNavbar} scrollingUp={scrollingUp} />
-            </div>
+           
+            <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} navbarOpen={navbarOpen} />
+                
 
             <div className="Hero NotIntersected">
+                <div className='HeroBackground'></div>
                 <div className="Text">Hello, my name is</div>
                 <h1 className="GradientText HeroTitle">Zachary Ruiz</h1>
                 <div className="Text"> I am a software engineer with a passion for solving problems through programming.</div>
-                <a className="HeroContactButton" href="mailto:zacharyruiz1@gmail.com"  target="_blank">Contact Me</a>
+                 <BackgroundSpotlightButton
+                    HandleClick={()=>{
+                        let x=window.open("mailto:" + "zacharyruiz1" + "@gmail.com");
+                        x.close();
+                    }}
+                    text={"Contact Me"}
+                    style={{height: '45px', width: "110px", marginTop: "30px" }}
+                />
 
             </div>
 
@@ -153,7 +161,14 @@ function App()
                     <div className="Text">
                         I am excited to explore new opportunities, and I would love to hear from you! Send me an email and I'll get back to you soon.
                     </div>
-                    <a className="HeroContactButton" href="mailto:zacharyruiz1@gmail.com" target="_blank">Contact Me</a>
+                    <BackgroundSpotlightButton 
+                    HandleClick={()=>{
+                        let x=window.open("mailto:" + "zacharyruiz1" + "@gmail.com");
+                        x.close();
+                    }}
+                    text={"Contact Me"}
+                    style={{height: '45px', width: "120px", marginTop: "20px" }}
+                    />                
                 </div>
       
 

@@ -1,56 +1,50 @@
 import React, { useEffect } from "react"
+import '../Styles/NavbarStyles.css'
+import Icon from "./Icon";
 
+import RotatingBackgroundGradientButton from "./RotatingBackgroundGradientButton.js";
+import useScrollingUp from "../Hooks/useScrollingUp";
+import BackgroundSpotlightButton from "./BackgroundSpotlightButton";
 
 export default function Navbar({ Resume, navbarOpen }) {
 
+    const scrollingUp = useScrollingUp(true);
 
     const [buttonsOn, setButtonsOn] = React.useState(false);
     const [open, setOpen] = React.useState(false);
 
-    useEffect(() => {
-
-        let timer;
-        if (navbarOpen) {
-            setOpen(true)
-            timer = setTimeout(() => {
-                setButtonsOn(true);
-
-            },500)
-     
-        }
-        else {
-            
-            setButtonsOn(false);
-            timer = (setTimeout(() => {
-                setOpen(false)
-            }, 650));
-        }
-        
-        
-        
-       
-
-        return () => {
-            if (timer != null) {
-                clearTimeout(timer);
-            }
-
-        };
-
-    }, [navbarOpen, buttonsOn])
-
-
     return (
         <div
-            className={`NavBar ${open ? "NavBarOpen" : "NavBarClose"}`}
-            id="NavBar">
-            <ol className="inline ColoredNumbers">
-                <li key={0} className={`inline ColoredNumbers ${buttonsOn ? "fadeIn" : "fadeOut"}`}><a className="tabMenuButton" href="#AboutSection">About</a></li>
-                <li key={1} className={`inline ColoredNumbers ${buttonsOn ? "fadeIn" : "fadeOut"}`}><a className="tabMenuButton" href="#ExperienceSection">Experience</a></li>
-                <li key={2} className={`inline ColoredNumbers ${buttonsOn ? "fadeIn" : "fadeOut"}`}><a className="tabMenuButton" href="#ProjectsSection">Projects</a></li>
-                <li key={3} className={`inline ColoredNumbers ${buttonsOn ? "fadeIn" : "fadeOut"}`}><a className="tabMenuButton" href="#ContactSection">Contact</a></li>
-                <li key={4} className={`inline DisableNumbering ${buttonsOn ? "fadeIn" : "fadeOut"}`}><a className= "tabMenuButton ResumeButton" href={Resume} target="_blank">Resume</a></li>
-            </ol>
+            style = {{
+                top: scrollingUp ? "0px": "-70px"
+            }} 
+            className = "navbar">
+            <Icon 
+                shimmerAlways = {true} 
+                maskUrl={`${process.env.PUBLIC_URL}Images/Icon.png`}
+                style = {{height: "50%", alignSelf: "center"}}    
+            />
+            <div >
+                <ul className = "nav-elements">
+                    <li className="nav-element"><a className = "nav-anchor" href="#">About</a></li>
+                    <li className="nav-element"><a className = "nav-anchor" href="#">Experience</a></li>
+                    <li className="nav-element"><a className = "nav-anchor" href="#">Projects</a></li>
+                    <li className="nav-element"><a className = "nav-anchor" href="#">Contact</a></li>
+                    <li className="li-container">
+                        <BackgroundSpotlightButton 
+                            style ={{  
+                                marginRight: '10px', 
+                                marginLeft: '10px', 
+                                alignSelf: 'center'
+                            }}
+                            text = {"Resume"}
+                            HandleClick={()=>{
+                                window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
+                            }}
+                        />
+                    </li>
+                </ul>
+            </div>
         </div>
         )
 

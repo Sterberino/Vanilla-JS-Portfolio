@@ -1,8 +1,9 @@
 import React from "react"
 
+import '../Styles/NavbarStyles.css'
+
 export default function Header({ Resume, navbarOpen, scrollingUp, setScrollingUp }) {
     const [offset, setOffset] = React.useState(window.pageYOffset || document.documentElement.scrollTop);
-   
     const element = React.useRef(null);
 
     React.useEffect(() => {
@@ -39,19 +40,15 @@ export default function Header({ Resume, navbarOpen, scrollingUp, setScrollingUp
     }, [navbarOpen, offset]);
 
     return (
-        <div className={`tabMenu ${scrollingUp ? "" : "TabClose"} ${navbarOpen ? "Hidden" : "Shown"}`} id="tabMenu" ref={element}>
-                <div className="logo">Z</div>
-                {/*We are keeping one set of navigation buttons on the header menu, and another on the Navbar. */}
-                {/*We use CSS and JS to make on set available and the other not available depending on screen width and navbar state.*/}
-
-                <ol className="inline ColoredNumbers">
-                    <li className="inline ColoredNumbers Disabled"><a className="tabMenuButton" href="#AboutSection">About</a></li>
-                    <li className="inline ColoredNumbers Disabled"><a className="tabMenuButton" href="#ExperienceSection">Experience</a></li>
-                    <li className="inline ColoredNumbers Disabled"><a className="tabMenuButton" href="#ProjectsSection">Projects</a></li>
-                    <li className="inline ColoredNumbers Disabled"><a className="tabMenuButton" href="#ContactSection">Contact</a></li>
-                    <li className="inline DisableNumbering Disabled"><a className="tabMenuButton ResumeButton" href={`${process.env.PUBLIC_URL}/ZacharyRuizResume.pdf`} target="_blank">Resume</a></li>
-                </ol>
-            </div>
+        <div class = "navbar">
+        <div class = "logo"></div>
+        <ul class = "nav-elements">
+          <li><a class = "nav-anchor" href="#">About</a></li>
+          <li><a class = "nav-anchor" href="#">Experience</a></li>
+          <li><a class = "nav-anchor" href="#">Projects</a></li>
+          <li><a class = "nav-anchor" href="#">Contact</a></li>
+        </ul>
+      </div>
         )
 
 }
