@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import './Constants.css';
 
 .icon-button{
@@ -6,6 +13,10 @@
 
     aspect-ratio: 1 / 1;
     height: 100%;
+
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--slate-400)), color-stop(45%, var(--slate-400)), color-stop(75%, var(--slate-200)));
+
+    background-image: -o-linear-gradient(bottom, var(--slate-400) 0%, var(--slate-400) 45%, var(--slate-200) 75%);
 
     background-image: linear-gradient(0deg, var(--slate-400) 0%, var(--slate-400) 45%, var(--slate-200) 75%);
     background-position: center;
@@ -19,13 +30,19 @@
     mask-repeat: no-repeat;
     mask-position: center;
 
+    -webkit-transition: all 0.25s ease;
+
+    -o-transition: all 0.25s ease;
+
     transition: all 0.25s ease;
-    filter:brightness(1);
+    -webkit-filter:brightness(1);
+            filter:brightness(1);
 }
 
 .icon-button:hover
 {
-    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+            filter: brightness(1.1);
 }
 
 .icon-button-fill{
@@ -35,11 +52,17 @@
     aspect-ratio: 1 / 1;
     height: 100%;
 
+    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--blue-200)), to(var(--blue-200)));
+
+    background-image: -o-linear-gradient(bottom, var(--blue-200) 0%, var(--blue-200) 100%);
+
     background-image: linear-gradient(0deg, var(--blue-200) 0%, var(--blue-200) 100%);
     background-position: center;
     background-repeat: no-repeat;
     
-    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+    
+            filter: brightness(1.1);
 
     -webkit-mask-image: url("");
     -webkit-mask-size: contain;
@@ -56,16 +79,26 @@
     height: 100%;
 
     background-position: 0% 0%;
+    background-image: -o-linear-gradient(340deg,rgba(0,0,0,0), 45%, var(--slate-200), 55%,rgba(0,0,0,0));
     background-image: linear-gradient(110deg,rgba(0,0,0,0), 45%, var(--slate-200), 55%,rgba(0,0,0,0));
     background-size: 200% 100%;
+
+    -webkit-transition: all 0.25s ease;
+
+    -o-transition: all 0.25s ease;
 
     transition: all 0.25s ease;
     opacity: 0;
 
-    animation-name: background-shine;
-    animation-duration: 2.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: background-shine;
+
+            animation-name: background-shine;
+    -webkit-animation-duration: 2.5s;
+            animation-duration: 2.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 
 .icon-shimmer-always > .icon-button-shimmer{
@@ -75,6 +108,15 @@
 .icon-button-shimmer:hover{
     opacity: 1;
 }
+
+@-webkit-keyframes background-shine{
+    from {
+      background-position: 100% 0%;
+    }
+    to {
+      background-position: -100% 0%;
+    }
+  }
 
 @keyframes background-shine{
     from {
@@ -120,7 +162,11 @@
         drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
         drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
         drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
+    -webkit-transition: -webkit-filter 0.4s ease;
+    transition: -webkit-filter 0.4s ease;
+    -o-transition: filter 0.4s ease;
     transition: filter 0.4s ease;
+    transition: filter 0.4s ease, -webkit-filter 0.4s ease;
 }
 
 
