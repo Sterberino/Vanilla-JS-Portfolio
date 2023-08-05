@@ -20,7 +20,10 @@ export default function Icon({style, maskUrl, HandleClick, fillImage = false, sh
             ></div>}   
             <div 
                 className= {`icon-button${shimmerAlways === true ? ' icon-shimmer-always': ''}`} 
-                style = {{maskImage: `url(${process.env.PUBLIC_URL}/${maskUrl})`}}
+                style = {{
+                    maskImage: `url(${process.env.PUBLIC_URL}/${maskUrl})`,
+                    WebkitMaskImage: `url(${process.env.PUBLIC_URL}/${maskUrl})`
+                }}
             >
                     <div className="icon-button-shimmer"></div>
             </div>
