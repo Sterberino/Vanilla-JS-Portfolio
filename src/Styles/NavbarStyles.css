@@ -164,16 +164,6 @@ ul.nav-elements > li.nav-element:hover > a.nav-anchor::before{
 
 }
 
-.background-grid{
-  background-size: 12px 12px;
-  background-image:
-    linear-gradient(to right, #b1b1b12e 1px, transparent 1px),
-    linear-gradient(to bottom, #b1b1b12e 1px, transparent 1px);
-
-  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);
-
-}
-
 .li-container{
   display: flex;
   flex-direction: column;

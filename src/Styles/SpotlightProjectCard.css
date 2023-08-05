@@ -1,16 +1,15 @@
 @import './Constants.css';
 
-.background-spotlight-button{
+.background-spotlight-card{
     --mouse-x: 0px;
     --mouse-y: 0px;
     --spotlight-opacity: 0;
+    --border-spotlight-opacity: 0;
+
     position: relative;
     z-index: 1;
     
-    height: 40px;
-    aspect-ratio: 2 / 1;
     border-radius: 10px;
-    
     cursor: pointer;
 
     pointer-events: all;
@@ -20,10 +19,9 @@
     align-items: center;
     justify-content: center;
     
-
 }
 
-.background-spotlight-button-shadow{
+.background-spotlight-card-shadow{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -39,41 +37,43 @@
     opacity: 0;
 }
 
-.background-spotlight-button:hover > .background-spotlight-button-shadow{
+.background-spotlight-card:hover > .background-spotlight-card-shadow{
     box-shadow: 
         0px 0px 15px var(--blue-700),
         0px 0px 5px var(--blue-300);
     opacity: 0.3;
 }
 
-.background-spotlight-button::before,
-.background-spotlight-button::after{
+.background-spotlight-card::before,
+.background-spotlight-card::after{
     --mouse-x: inherit;
     --mouse-y: inherit;
     --spotlight-opacity: inherit;
+    --border-spotlight-opacity: inherit;
+    --card-color: rgba(19, 20, 21, 1);
     border-radius: inherit;
+
 
     content: '';
     position: absolute;
 }
 
-.background-spotlight-button::after{
+.background-spotlight-card::after{
     z-index: 2;
     inset: 1px;
     position: absolute;
     pointer-events: none;
 
-    background-image: 
-        radial-gradient(40px circle at var(--mouse-x) var(--mouse-y), rgba(248,250,252, calc(0.15 * var(--spotlight-opacity))) 0%, transparent 100%),
-        linear-gradient(0deg, var(--slate-950) 0%, var(--slate-900) 100%);
-    
+    background-image: radial-gradient(250px circle at var(--mouse-x) var(--mouse-y), rgba(248,250,252, calc(0.04 * var(--spotlight-opacity))) 0%, transparent 100%);
+    background-color: var(--card-color);
+    transition: background-color 0.3s ease-in-out;
 }
 
-.background-spotlight-button:hover::after{
-    opacity: 1;
+.background-spotlight-card:hover::after{
+    background-color: rgba(23, 25, 28, 1);
 }
 
-.background-spotlight-button::before{
+.background-spotlight-card::before{
     z-index: -1;
     bottom: 0px;
     right: 0px;
@@ -81,16 +81,16 @@
     left: 0px;
 
     background-image: 
-        radial-gradient(45px circle at var(--mouse-x) var(--mouse-y), rgba(248,250,252, calc(0.5 * var(--spotlight-opacity))) 0%, transparent 100%);
-    background-color: var(--slate-700);
+        radial-gradient(150px circle at var(--mouse-x) var(--mouse-y), rgba(248,250,252, calc(0.25 * var(--border-spotlight-opacity))) 0%, transparent 100%);
+    background-color: rgba(30, 33, 38, 1);
 }
 
-.background-spotlight-button:hover > *{
+.background-spotlight-card:hover > *{
     color: var(--white1);
     text-shadow: 0px 0px 3px rgba(255,255,255, 0.4);
 }
 
-.background-spotlight-button > *:not(.background-spotlight-button-shadow){
+.background-spotlight-card > *:not(.background-spotlight-card-shadow){
     position: relative;
     font-family: var(--mono);
     text-align: center;

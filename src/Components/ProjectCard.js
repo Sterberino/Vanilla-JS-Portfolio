@@ -1,8 +1,11 @@
 // JavaScript source code
 import React from "react"
-
+import '../Styles/SpotlightProjectCard.css'
+import '../Styles/GridStyles.css'
 
 export default function ProjectCard({projectTitle, projectDescription, projectImage, containImage, iconsArray}) {
+    const [opacity, setOpacity] = React.useState(0);
+    
     const icons = iconsArray.map(icon => {
         return (
             <a key={icon.key} href={icon.iconLink} target="_blank">
@@ -10,16 +13,33 @@ export default function ProjectCard({projectTitle, projectDescription, projectIm
             </a>)
     })
 
+
+    const handleMouseEnter = () => {
+        setOpacity(1);
+      };
+    
+      const handleMouseLeave = () => {
+        setOpacity(0);
+      };
+    
+
     return (
-        <div className="gridItem card">
+        <div 
+            className="gridItem background-spotlight-card"
+            onMouseEnter={()=> {handleMouseEnter()}}
+            onMouseLeave={()=> {handleMouseLeave()}}
+            style = {{
+                "--spotlight-opacity" : opacity
+            }}
+        >
             <div className="cardHeader">
                 <h5 className="GradientText">{projectTitle}</h5>
-                {icons}
+                <div className="icons-wrapper">{icons}</div>
 
             </div>
-            <div className="imgOverlay">
+            {/*<div className="imgOverlay">
                 <img className={containImage ? "containImage" : ""}  src={projectImage} width="720" height="720" />
-            </div>
+            </div>*/}
 
             <div className="DescriptionContainer">
                 <p className="briefDescription">{projectDescription}</p>
