@@ -32,22 +32,50 @@ export default function Sidebar()
 
             <div className="sidebar-buttons-wrapper">
                 <ul className = "nav-elements">
-                    <li className="nav-element"><a className = "nav-anchor" href="#">About</a></li>
-                    <li className="nav-element"><a className = "nav-anchor" href="#">Experience</a></li>
-                    <li className="nav-element"><a className = "nav-anchor" href="#">Projects</a></li>
-                    <li className="nav-element"><a className = "nav-anchor" href="#">Contact</a></li>
-                </ul>
-                <BackgroundSpotlightButton 
-                    style ={{  
-                        marginRight: '10px', 
-                        marginLeft: '10px', 
-                        alignSelf: 'center'
-                    }}
-                    text = {"Resume"}
-                    HandleClick={()=>{
-                        window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
-                    }}
-                />
+                    <li className="nav-element">
+                                <a 
+                                    className = "nav-anchor" 
+                                    onClick={()=>{
+                                        document.getElementById('AboutSection').scrollIntoView(); 
+                                        setSidebarOpen(false);
+                                    }}
+                        >About</a></li>
+                        <li className="nav-element">
+                            <a 
+                            className = "nav-anchor" 
+                            onClick={()=>{
+                                document.getElementById('ExperienceSection').scrollIntoView(); 
+                                setSidebarOpen(false);
+                            }}
+                            >Experience</a></li>
+                        <li className="nav-element">
+                            <a 
+                                className = "nav-anchor"
+                                onClick={()=>{
+                                    document.getElementById('ProjectsSection').scrollIntoView(); 
+                                    setSidebarOpen(false);
+                                }}
+                            >Projects</a></li>
+                        <li className="nav-element">
+                            <a 
+                                className = "nav-anchor"
+                                onClick={()=>{
+                                    document.getElementById('ContactSection').scrollIntoView(); 
+                                    setSidebarOpen(false);
+                                }}
+                            >Contact</a></li>
+                    </ul>
+                    <BackgroundSpotlightButton 
+                        style ={{  
+                            marginRight: '10px', 
+                            marginLeft: '10px', 
+                            alignSelf: 'center'
+                        }}
+                        text = {"Resume"}
+                        HandleClick={()=>{
+                            window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
+                        }}
+                    />
                 </div>            
         </div>
     )

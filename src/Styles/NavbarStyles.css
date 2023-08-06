@@ -68,7 +68,8 @@ html, body {
     width: fit-content;
     justify-content: center;
     padding-left: 0px;
-    }
+    user-select: none;  
+  }
 
   ul.nav-elements > li.nav-element {
   display: flex;
@@ -123,6 +124,8 @@ a.nav-anchor{
   overflow-y:clip;
   margin-right: 10px;
   margin-left: 10px;
+
+  cursor: pointer;
 }
 
 a.nav-anchor::before{
