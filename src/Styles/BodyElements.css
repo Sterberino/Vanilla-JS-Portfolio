@@ -557,6 +557,7 @@ a.HeroContactButton {
         text-align: center;
         word-break: keep-all;
         width: 50vw;
+        font-family: var(--mono);
     }
 
     .Text {
