@@ -55,12 +55,9 @@ function App()
             if(size.x !== lastSize)
             {
                 if (size.x >= 640 && lastSize < 640) {
-                    console.log("Changing Sidebar State");
                     setSidebarOpen(false);
                 }
-                else if (size.x < 640 && lastSize >= 640) {
-                    console.log("Changing Sidebar State");
-        
+                else if (size.x < 640 && lastSize >= 640) {        
                     setSidebarOpen(false);
                 }        
             }

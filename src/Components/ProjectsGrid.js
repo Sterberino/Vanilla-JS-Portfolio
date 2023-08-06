@@ -25,7 +25,6 @@ export default function ProjectGrid() {
 
     React.useEffect(()=>{
         cardsRef.current = document.getElementsByClassName("background-spotlight-card")
-        console.log(cardsRef.current.length)    
     }, 
     [])
 
@@ -37,7 +36,6 @@ export default function ProjectGrid() {
                 cardsRef.current[i].classList.add('grid-card-animate');
                 cardsRef.current[i].style.animationDelay = `${i * 0.15}s`
             }
-            console.log("ON SCREEN");
         }
         else{
             for(let i = 0; i < cardsRef.current.length; i++)
@@ -45,7 +43,6 @@ export default function ProjectGrid() {
                 cardsRef.current[i].classList.remove('grid-card-animate');
                 cardsRef.current[i].style.animationDelay = `${i * 0}s`
             }
-            console.log("NOT ON SCREEN")
         }
     }, [isOnScreen])
 

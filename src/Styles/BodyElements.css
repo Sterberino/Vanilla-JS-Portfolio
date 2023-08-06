@@ -614,12 +614,22 @@ a.HeroContactButton {
     .Hero > .HeroTitle {
         font-size: 7.5vw;
     }
+
+    
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
+    .AboutSection {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
 
     .AboutSection > p{
         width: 80%;
+        max-width: 80%;
+        min-width: 80%;
         -ms-flex-item-align: center;
             -ms-grid-row-align: center;
             align-self: center;
@@ -627,18 +637,11 @@ a.HeroContactButton {
             justify-self: center;
     }
 
-    .AboutSection {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-        flex-direction: column-reverse;
-
-        justify-content: center;
-    }
-
         .AboutSection > .imgOverlay {
-            min-height: 280px;
-            min-width: 280px;
+            min-width: 80%;
+            width: 80%;
+
+            aspect-ratio: 1 / 1 !important;
             -ms-flex-item-align: center;
             -ms-grid-row-align: center;
             align-self: center;
@@ -658,7 +661,7 @@ a.HeroContactButton {
     }
 }
 
-@media only screen and (max-device-width: 600px) {
+@media only screen and (max-device-width: 640px) {
 
     .AboutSection {
         -webkit-box-orient: vertical;
@@ -667,9 +670,22 @@ a.HeroContactButton {
         flex-direction: column-reverse;
     }
 
+    .AboutSection > p{
+        width: 80%;
+        max-width: 80%;
+        min-width: 80%;
+        -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+            -ms-grid-column-align: center;
+            justify-self: center;
+    }
+
         .AboutSection > .imgOverlay {
-            min-height: 280px;
-            min-width: 280px;
+            min-width: 80%;
+            width: 80%;
+
+            aspect-ratio: 1 / 1 !important;
             -ms-flex-item-align: center;
             -ms-grid-row-align: center;
             align-self: center;
