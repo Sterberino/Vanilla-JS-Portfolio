@@ -107,7 +107,7 @@ function App()
                         My name is Zachary Ruiz, and I am a Computer Engineering student at University of California, Riverside.
                         I am also a Software Engineer Intern at the UCR Brain Game Center, where I build eyetracking tools for cognitive research using C#.
                     </p>
-
+                    <div className='Radial-Background'></div>
                     <div className="imgOverlay">
                         <img src={ProfileImage} />
                     </div>
@@ -122,10 +122,11 @@ function App()
                 </div>
 
 
-                <div className="AboutSection NotIntersected">
+                <div className="AboutSection">
                     <div className="imgOverlay">
                         <img src={ExperienceImage} />
                     </div>
+                    <div className='Radial-Background'style={{"--circle-position" : '0% 50%'}}></div>
                     <p>
                         I currently work as a Software Engineer Intern for the UCR Brain Game Center. During my time here I've built eyetracking tools using the Tobii Pro and Meta Quest Pro.
                         These tools have been used for studying concussion symtpoms and scotoma central vision loss.

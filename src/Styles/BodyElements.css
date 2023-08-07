@@ -183,6 +183,25 @@
     animation-iteration-count: 1;
 }
 
+.Radial-Background{
+    --circle-position: 100% 50%;
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    z-index: -1;
+    top: -100%;
+    left: 0;
+    
+    width: 100vw;
+    height: 300%;
+    
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle at var(--circle-position), var(--slate-300) 0%, transparent 30%);
+    background-size: 100%;
+    
+    opacity: 0.085;
+}
+
+
 @keyframes animate-hero-background {
     from {
         opacity: 0;
@@ -234,7 +253,7 @@
 
 .SectionBlock {
     scroll-margin-top: 100px;
-    margin: calc(40vh + 10px) 5px 25px 5px;
+    margin: calc(40vh + 10px) 0px 25px 0px;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -425,18 +444,16 @@ a.HeroContactButton {
     display: flex;
     -ms-flex-line-pack: center;
     align-content: center;
-    width: 75%;
+    width: 100%;
     height: -webkit-max-content;
     height: -moz-max-content;
     height: max-content;
     position: relative;
-    margin: 20px 5px 5px 5px;
+    margin-top: 20px;
     gap: 20px;
-    clear: both;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    left: 10%;
-    right: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
 }
 
     .AboutSection:nth-child(1) {
