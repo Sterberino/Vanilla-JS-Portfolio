@@ -1,0 +1,220 @@
+@import './Constants.css';
+
+.icon-floaters-container
+{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 1000px;
+    margin-top: 20px;
+}
+
+.icon-floater-wrapper:nth-child(1){
+    top: -40%;
+    left: 10%;
+    animation-delay: -2s;
+}
+
+.icon-floater-wrapper:nth-child(2){
+    top: 35%;
+    left: 5%;
+    animation-delay: -1s;
+}
+.icon-floater-wrapper:nth-child(3){
+    top: 15%;
+    left: 25%;
+}
+.icon-floater-wrapper:nth-child(4){
+    top: 15%;
+    right: 25%;
+    animation-delay: -1s;
+}
+.icon-floater-wrapper:nth-child(5){
+    top: 35%;
+    right: 5%;
+    animation-delay: -2s;
+}
+.icon-floater-wrapper:nth-child(6){
+    top: -40%;
+    right: 10%;
+}
+
+
+
+.icon-floater-wrapper{
+    z-index: 2;
+    position: absolute;
+    width: 90px;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255,255,255,0);
+
+    animation-name: float;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.icon-floater-wrapper:hover > .icon-floater-icon{
+    filter: brightness(1.2);
+}
+
+.icon-floater-icon{
+    --image-url: "";
+    --mouse-x: 0px;
+    --mouse-y: 0px;
+
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+
+    position: absolute;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 1px solid var(--blue-400);
+
+    user-select: none;
+    filter: brightness(1);    
+
+    transform: translate3d(var(--mouse-x), var(--mouse-y), 0) !important;
+
+ 
+    transition: filter 0.3s ease-in-out, transform 0.2s ease;
+}
+.icon-floater-icon-selected{
+    transition: filter 0.3s ease-in-out, transform 0.2s ease;
+}
+.icon-floater-icon-unselected{
+    transition: filter 0.3s ease-in-out, transform 0.4s ease;
+}
+
+
+.icon-floater-icon::before{
+    position: absolute;
+    width: calc(100% * 2);
+    aspect-ratio: inherit;
+    content: "";
+    z-index: -1;
+
+    border-radius: 50%;
+
+    background-image: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 1) 0%, transparent 70%);
+    
+    opacity: 0.4;
+}
+
+
+.icon-floater-icon::after{
+--image-url: inherit;
+
+    position: absolute;
+    width: inherit;
+    aspect-ratio: inherit;
+    content: "";
+    z-index: 1;
+
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+   
+    mask-image: var(--image-url);
+    -webkit-mask-image: var(--image-url);
+
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(var(--blue-400) 0%, var(--blue-400) 100%);
+}
+
+@keyframes float{
+    0% {
+        transform: translateX(0) translateY(-3px);
+    }
+    50% {
+        transform: translateX(0) translateY(3px);
+    }
+    100% {
+        transform: translateX(0) translateY(-3px);
+    }
+}
+
+@media only screen and (max-device-width: 800px) {
+    .icon-floater-wrapper:nth-child(1){
+        top: -60px;
+        left: 10px;
+        animation-delay: -2s;
+    }
+    
+    .icon-floater-wrapper:nth-child(2){
+        top: 50px;
+        left: 50px;
+        animation-delay: -1s;
+    }
+    .icon-floater-wrapper:nth-child(3){
+        top: 5px;
+        left: calc(50% - 45px);
+    }
+    .icon-floater-wrapper:nth-child(4){
+        top: -60px;
+        right: 10px;
+        animation-delay: -1s;
+    }
+    .icon-floater-wrapper:nth-child(5){
+        top: 55px;
+        right: 50px;
+        animation-delay: -2s;
+    }
+    .icon-floater-wrapper:nth-child(6){
+        display: none;
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .icon-floater-wrapper:nth-child(1){
+        top: -60px;
+        left: 10px;
+        animation-delay: -2s;
+    }
+    
+    .icon-floater-wrapper:nth-child(2){
+        top: 50px;
+        left: 50px;
+        animation-delay: -1s;
+    }
+    .icon-floater-wrapper:nth-child(3){
+        top: 5px;
+        left: calc(50% - 45px);
+    }
+    .icon-floater-wrapper:nth-child(4){
+        top: -60px;
+        right: 10px;
+        animation-delay: -1s;
+    }
+    .icon-floater-wrapper:nth-child(5){
+        top: 55px;
+        right: 50px;
+        animation-delay: -2s;
+    }
+    .icon-floater-wrapper:nth-child(6){
+        display: none;
+        opacity: 0;
+    }
+
+}

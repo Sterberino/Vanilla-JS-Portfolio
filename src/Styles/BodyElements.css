@@ -141,9 +141,11 @@
     flex-flow: column;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+    
+
     gap: 0px;
     height: 100vh;
     min-height: 500px;
@@ -151,6 +153,8 @@
     overflow-x: hidden;
     overflow-y: hidden;
     padding: 5px;
+    padding-top: 25vh;
+    
     min-height: -webkit-max-content;
     min-height: -moz-max-content;
     min-height: max-content;

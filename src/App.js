@@ -20,6 +20,7 @@ import Particles from 'react-particles';
 import BackgroundSpotlightButton from './Components/BackgroundSpotlightButton';
 import useWindowSize from './Hooks/useWindowSize';
 import Sidebar from './Components/Sidebar';
+import IconFloaters from './Components/IconFloaters';
 
 const SidebarContext = React.createContext();
 export {SidebarContext}
