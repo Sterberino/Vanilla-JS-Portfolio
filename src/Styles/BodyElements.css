@@ -27,10 +27,11 @@
 
 
 .background-grid{
+    --grid-bg-color: rgba(177, 177, 177, 0.18);
     background-size: 20px 20px;
     background-image:
-      linear-gradient(to right,  rgba(177, 177, 177, 0.08), transparent 1px),
-      linear-gradient(to bottom, rgba(177, 177, 177, 0.08) 1px, transparent 1px);
+      linear-gradient(to right, var(--grid-bg-color), transparent 1px),
+      linear-gradient(to bottom, var(--grid-bg-color) 1px, transparent 1px);
   
     mask-image: radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);
     z-index: -1;
