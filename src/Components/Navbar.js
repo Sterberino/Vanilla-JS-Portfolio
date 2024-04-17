@@ -25,7 +25,7 @@ export default function Navbar({ Resume, navbarOpen }) {
         {
             setOpen(false);
         }
-        else if(scrollingUp && !sidebarOpen)
+        else if(((scrollingUp && !sidebarOpen) || window.scrollY <= 0) && !open)
         {
             setOpen(true);
         }
