@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function useScrollingUp(initialVal = false)
+export default function useScrollingUp(initialVal = false, trueOnScrollTop = true)
 {
 const [scrollingUp, setScrollingUp] = React.useState(initialVal);
 const [offset, setOffset] = React.useState(window.scrollY || document.documentElement.scrollTop)
@@ -8,12 +8,18 @@ const [offset, setOffset] = React.useState(window.scrollY || document.documentEl
     React.useEffect(() => {
         function ScrollHandle() {
             var st = window.scrollY || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-            if (st > offset) {
+            var y = (window.pageYOffset !== undefined) ?
+            window.pageYOffset :
+            (document.documentElement || document.body.parentNode || document.body).scrollTop;
+            
+            console.log(y)
+            if (st <= offset || (trueOnScrollTop && y <= 0)) {
                 //downscroll code   
-                setScrollingUp(false);
+                setScrollingUp(true);
             }
             else {
-                setScrollingUp(true);
+
+                setScrollingUp(false);
             }
 
             // For Mobile or negative scrolling
