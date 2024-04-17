@@ -1,0 +1,35 @@
+.background-grid{
+    --grid-bg-color: rgba(203, 213, 225, 0.2);
+    background-size: 30px 30px;
+    background-image:
+      linear-gradient(to right, var(--grid-bg-color), transparent 1px),
+      linear-gradient(to bottom, var(--grid-bg-color) 1px, transparent 1px);
+  
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);
+    z-index: -1;
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    opacity: 0.5;
+    width: 400px;
+    aspect-ratio: 1/1;
+    filter: blur(50px);
+    background: linear-gradient(
+      47deg,
+      rgba(207, 250, 254, 0.2) 21%,
+      rgba(0, 164, 173, 0.5) 67%,
+      rgba(232, 121, 249, 0.2) 81%
+    );
+    translate: 90% -50%;
+    border-radius: 60% 40% 30% 70% / 100% 85% 92% 74%;
+    /*  Optional  */
+    /*   box-shadow: inset 50px 50px 17px 0px #ff588b,
+      inset 100px 100px 17px 0px #66319f; */
+    z-index: -2;
+  }

@@ -1,0 +1,142 @@
+@import "Constants.css";
+
+.hero{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+}
+
+.hero-column{
+    flex: 1;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 50vw;
+    height: 100%;
+}
+
+.hero-title{
+    font-size: 2.25em;
+    color: rgb(248, 250, 252); /*bg-slate-50*/
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 2.5rem;
+
+    overflow: visible;
+    text-overflow: visible;
+
+    font-family: var(--mono);
+}
+
+.hero-text{
+    color: rgb(248, 250, 252); /*bg-slate-50*/
+    font-family: var(--mono);
+}
+
+.hero-title-word{
+    display: inline-block;
+    overflow: visible;
+    text-overflow: visible;
+}
+
+.hero-title-letter{
+    display: inline-block;
+    opacity: 0;
+    filter: blur(20px);
+    transform: scale(3);
+    visibility: visible;
+    
+    animation-name: letter-fade-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+}
+
+@keyframes letter-fade-in {
+    0%{
+        opacity: 0;
+        filter: blur(20px);
+        transform: scale(3);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+        transform: scale(1);
+    }
+}
+
+
+.hero-title-gradient{
+    color: transparent;
+    background-image: linear-gradient(
+        to right,
+        rgb(248, 250, 252) 40%,  
+        rgb(137, 204, 254) 40%, 
+        rgb(92, 161, 248) 100%
+        );
+
+    background-clip: text;
+    background-size: 400%;
+    background-position: 0%;
+    background-repeat: no-repeat;
+
+    animation-name: animated-text-gradient;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+    
+}
+
+@keyframes animated-text-gradient{
+    0%{
+        background-position: 0% 50%;
+        text-shadow: 
+        0 0 10px transparent, 
+        0 0 20px transparent;
+    }
+    100%{
+        background-position: 100% 50%;
+        text-shadow: 
+        0 0 10px #89f7fe, 
+        0 0 20px #89f7fe;
+    }
+}
+
+@media only screen and (max-width: 956px) {
+    .hero-title{
+        font-size: 2em;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .hero{
+        flex-direction: column;
+        top: 100px;
+        height: min-content;
+    }
+
+    .hero-column{
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+}
+

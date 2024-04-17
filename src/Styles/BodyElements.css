@@ -48,7 +48,6 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: var(--slate-1000);
     background-size: cover;
     margin: 0 0 0 0;
     z-index: 0;
@@ -130,63 +129,9 @@
 
 
 
-.Hero {
-    position: relative;
-    
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: column;
-    flex-flow: column;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-box-pack: flex-start;
-    -ms-flex-pack: flex-start;
-    justify-content: flex-start;
-    
 
-    gap: 0px;
-    height: 100vh;
-    min-height: 500px;
-    width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    padding: 5px;
-    padding-top: 25vh;
-    
-    min-height: -webkit-max-content;
-    min-height: -moz-max-content;
-    min-height: max-content;
-    min-width: 0;
-    
-    align-items: center;
-    box-sizing: border-box;
-}
 
-.Hero > * {
-    width: 100%;
-}
 
-.Downlit-Radial-Background{
-    z-index: inherit;
-
-    position: absolute;
-    top: 0;
-    left:0;
-    right:0;
-    bottom: 0;
-
-    background-image: radial-gradient(circle at 50% 0%, var(--slate-50) 0%, transparent 60%);
-    opacity: 0;
-
-    animation-name: animate-hero-background;
-    animation-duration: 1.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-}
 
 .Radial-Background{
     --circle-position: 100% 50%;
@@ -207,54 +152,6 @@
 }
 
 
-@keyframes animate-hero-background {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.1;
-    }
-}
-
-    .Hero > .GradientText {
-        text-align: center;
-        text-anchor: start;
-        margin: 0 0 0 0;
-        min-height: -webkit-max-content;
-        min-height: -moz-max-content;
-        min-height: max-content;    
-        font-family: var(--sans);
-    }
-
-    .Hero > h2.GradientText {
-        position: relative;
-        -ms-grid-row: 2;
-        grid-row: 2;
-        background-image: -webkit-gradient(linear, left bottom, left top, from(var(--light-text-gradient)), color-stop(45%, var(--light-text-gradient)), color-stop(75%, var(--text-gradient-highlight)));
-        background-image: -o-linear-gradient(bottom, var(--light-text-gradient) 0%, var(--light-text-gradient) 45%, var(--text-gradient-highlight) 75%);
-        background-image: linear-gradient(0deg, var(--light-text-gradient) 0%, var(--light-text-gradient) 45%, var(--text-gradient-highlight) 75%);
-        background-size: cover;
-        background-attachment: inherit;
-        height: 80%;
-        font-size: 3vw;
-    }
-
-
-
-    .Hero > .HeroTitle {
-        position: relative;
-        margin: 5px 0px 10px 0px;
-        font-size: 5.5vw;
-    }
-
-.HeroTitle.GradientText {
-    background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(45%, var(--lightGold)), color-stop(80%, white));
-    background-image: -o-linear-gradient(bottom, var(--lightGold) 0%, var(--lightGold) 45%, white 80%);
-    background-image: linear-gradient(0deg, var(--lightGold) 0%, var(--lightGold) 45%, white 80%);
-    background-size: cover;
-    background-attachment: inherit;
-    top: 0%;
-}
 
 .SectionBlock {
     scroll-margin-top: 100px;
@@ -269,88 +166,6 @@
     -ms-flex-direction: column;
     flex-direction: column;
 }
-
-.Hero > .Text {
-    margin: -5px 0px -5px 0px;
-    position: relative;
-    text-align: center;
-    text-anchor: start;
-    font-size: 1.2em;
-    color: var(--defaultTextColor);
-    font-family: var(--mono);
-    -ms-grid-row: 2;
-    grid-row: 2;
-    width: 40%;
-
-    max-width: 40%;
-}
-
-.Hero > a.HeroContactButton {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-a.HeroContactButton {
-    padding: 8px;
-    /*background: #000000;*/
-    width: 120px;
-    min-width: 50px;
-    height: 40px;
-    position: relative;
-    border-radius: 1px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    z-index: 0;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    border: 1.5px solid #d3d3d3 /*#ed1c24*/;
-    -webkit-box-shadow: 0px 0px 0px #d3d3d3;
-    box-shadow: 0px 0px 0px #d3d3d3;
-    font-size: 1em;
-    text-align: center;
-    color: var(--defaultTextColor);
-    text-decoration: none;
-    margin: 20px 0px 0px 0px;
-    font-family: var(--sans);
-}
-
-    a.HeroContactButton:hover {
-        border: 1.5px solid var(--lightGold);
-        background: #212121;
-        color: transparent;
-        -webkit-box-shadow: 0px 0px 2px var(--lightGold);
-        box-shadow: 0px 0px 2px var(--lightGold);
-    }
-
-        a.HeroContactButton:hover::after {
-            padding: 8px;
-            /*background: #000000;*/
-            width: 120px;
-            min-width: 30px;
-            height: 50px;
-            position: absolute;
-            border-radius: 1px;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            text-align: center;
-            left: 0%;
-            top: 0%;
-            margin-left: 0 0 0 0;
-            width: 100%;
-            height: 100%;
-            content: "Contact Me";
-            color: transparent;
-            background-image: -webkit-gradient(linear, left bottom, left top, from(var(--lightGold)), color-stop(50%, var(--lightGold)), color-stop(85%, white));
-            background-image: -o-linear-gradient(bottom, var(--lightGold) 0%, var(--lightGold) 50%, white 85%);
-            background-image: linear-gradient(0deg, var(--lightGold) 0%, var(--lightGold) 50%, white 85%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            background-attachment: local;
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: 5;
-        }
 
 
         
@@ -595,50 +410,10 @@ a.HeroContactButton {
         word-break: keep-all;
         width: 60vw;
     }
-
-    .Hero > .HeroTitle{
-        font-size: 6vw;
-    }
-
-    .Hero > .Text {
-        position: relative;
-        
-        text-anchor: start;
-        color: var(--defaultTextColor);
-        width: 40%;
-    }
-
-    .Hero > .Text {
-        max-width: 90%;
-    }
-    
 }
 
 .Text {
     color: var(--defaultTextColor);
-}
-
-
-
-
-
-
-@media screen and (max-width: 800px) {
-    .Hero > .HeroTitle {
-        font-size: 7.5vw;
-    }
-
-    .Hero > .Text {
-        max-width: 80%;
-    }
-}
-
-@media only screen and (max-device-width: 800px) {
-    .Hero > .HeroTitle {
-        font-size: 7.5vw;
-    }
-
-    
 }
 
 @media screen and (max-width: 640px) {
@@ -672,16 +447,6 @@ a.HeroContactButton {
             justify-self: center;
         }
 
-    .Hero > .HeroTitle {
-        font-size: 10vw;
-    }
-
-
-    .Hero > .Text {
-        position: relative;
-        text-anchor: start;
-        width: 65%;
-    }
 }
 
 @media only screen and (max-device-width: 640px) {
@@ -716,17 +481,8 @@ a.HeroContactButton {
             justify-self: center;
         }
 
-    .Hero > .HeroTitle {
-        font-size: 8vw;
-    }
-
+    
     .Text {
         color: var(--defaultTextColor);
-    }
-
-    .Hero > .Text {
-        position: relative;
-        text-anchor: start;
-        width: 50%;
     }
 }

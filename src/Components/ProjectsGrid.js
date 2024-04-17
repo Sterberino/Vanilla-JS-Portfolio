@@ -25,6 +25,15 @@ export default function ProjectGrid() {
 
     React.useEffect(()=>{
         cardsRef.current = document.getElementsByClassName("background-spotlight-card")
+        for (const card of cardsRef.current)
+        {
+            const rect = card.getBoundingClientRect(),
+            x = 10000 - rect.left,
+            y = 10000 - rect.top;
+
+            card.style.setProperty("--mouse-x", `${x}px`)
+            card.style.setProperty("--mouse-y", `${y}px`)
+        }
     }, 
     [])
 

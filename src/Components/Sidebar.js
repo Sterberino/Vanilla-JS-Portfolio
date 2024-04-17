@@ -5,6 +5,7 @@ import '../Styles/NavbarStyles.css'
 
 import BackgroundSpotlightButton from "./BackgroundSpotlightButton";
 import { SidebarContext } from "../App";
+import Button from "./Button";
 
 export default function Sidebar()
 {   
@@ -65,14 +66,13 @@ export default function Sidebar()
                                 }}
                             >Contact</a></li>
                     </ul>
-                    <BackgroundSpotlightButton 
-                        style ={{  
-                            marginRight: '10px', 
-                            marginLeft: '10px', 
+                    <Button 
+                        style ={{   
+                            left: '20px', 
                             alignSelf: 'center'
                         }}
                         text = {"Resume"}
-                        HandleClick={()=>{
+                        onClick={()=>{
                             window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
                         }}
                     />

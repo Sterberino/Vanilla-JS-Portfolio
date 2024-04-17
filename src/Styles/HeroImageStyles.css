@@ -1,0 +1,112 @@
+.hero-image-wrapper{
+    position: relative;
+    padding: 5vh;
+    
+    width: 35%;
+    aspect-ratio: 1/1;
+}
+
+.hero-image-wrapper-initial-animation{
+    animation-name: hero-wrapper-fade-in;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0ms;
+}
+
+@keyframes hero-wrapper-fade-in {
+    0%{
+        opacity: 0;
+        filter: blur(10px);
+        transform: scale(1.05) translateX(30px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        filter: blur(0px);
+        transform: scale(1) translateX(0px);
+    }
+}
+
+.hero-image-looping-animation{
+    animation-name: hero-wrapper-looping;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: 0ms;
+}
+
+@keyframes hero-wrapper-looping{
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(7px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.hero-binary-image{
+    position: absolute;
+    --mask-url: none;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    mask-image: var(--mask-url);
+
+    mask-repeat: no-repeat;
+    mask-size: cover;
+
+    background-image: linear-gradient(
+        to top, 
+        rgb(92, 161, 248) 0%,  
+        rgb(92, 161, 248) 40%,  
+        rgb(137, 204, 254) 45%,
+        rgb(248, 250, 252) 50%,
+        rgb(137, 204, 254) 55%,
+        rgb(92, 161, 248) 60%,
+        rgb(92, 161, 248) 100%
+        );
+    background-repeat: no-repeat;
+    background-size: 100% 250%;
+    background-position: 0%;
+
+    animation-name: animated-background-gradient;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-delay: 0ms;
+}
+
+
+@keyframes animated-background-gradient{
+    0%{
+        background-position: 50% 0%;
+    }
+    100%{
+        background-position: 50% 100%;
+    }
+}
+
+img.hero-image-front{
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+@media only screen and (max-width:640px)
+{
+    .hero-image-wrapper{
+        width: 80%;
+    }
+}

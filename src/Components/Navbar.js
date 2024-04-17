@@ -9,6 +9,7 @@ import useWindowSize from "../Hooks/useWindowSize";
 import NavbarButton from "./NavbarButton";
 import '../Styles/SideBarStyles.css'
 import { SidebarContext } from "../App";
+import Button from "./Button.js"
 
 export default function Navbar({ Resume, navbarOpen }) {
     const {sidebarOpen, setSidebarOpen} = React.useContext(SidebarContext)
@@ -76,14 +77,9 @@ export default function Navbar({ Resume, navbarOpen }) {
                             }}
                         >Contact</a></li>
                     <li className="li-container">
-                        <BackgroundSpotlightButton 
-                            style ={{  
-                                marginRight: '10px', 
-                                marginLeft: '10px', 
-                                alignSelf: 'center'
-                            }}
+                        <Button 
                             text = {"Resume"}
-                            HandleClick={()=>{
+                            onClick={()=>{
                                 window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
                             }}
                         />

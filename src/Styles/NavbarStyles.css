@@ -1,17 +1,16 @@
 @import './Constants.css';
 
 body {
-  background-color: rgba(0,0,0,1);
-
-
+  background-color: var(--body-bg-color);
   padding: 0%;
   vertical-align: top;
-  overflow-x: hidden;
 }
+
 
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 
@@ -101,11 +100,11 @@ transform: scale(1) translateY(50%);
 }
 
 ul.nav-elements > li.nav-element:hover:after{
-position: absolute;
-bottom: 0;
+  position: absolute;
+  bottom: 0;
   width: 100%;
-z-index: 3;
-left: 0%;
+  z-index: 3;
+  left: 0%;
     opacity: 1;
 }
 
@@ -214,6 +213,11 @@ HTML Below:
     a.nav-anchor::before{
       top: 35%;
     }
+
+    ul.nav-elements > li.nav-element:hover:after{
+      opacity: 0;
+    }
+    
 }
 
 @media only screen and (max-device-width: 640px) {
@@ -238,5 +242,10 @@ HTML Below:
 
   a.nav-anchor::before{
     top: 35%;
+  }
+
+  
+  ul.nav-elements > li.nav-element:hover:after{
+    opacity: 0;
   }
 }

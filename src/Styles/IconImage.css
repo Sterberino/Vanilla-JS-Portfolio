@@ -64,10 +64,15 @@
     
             filter: brightness(1.1);
 
-    -webkit-mask-image: url("");
+    -webkit-mask-image: none;
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: center;
+
+    mask-image: none;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
 
 }
 
@@ -138,30 +143,16 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url("");
+    background-image: none;
     
     cursor: pointer;
 
-    -webkit-filter: 
+    filter: 
         drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
         drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
         drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
         drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
-    -moz-filter: 
-        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
-    -ms-filter: 
-        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
-    -o-filter: 
-        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border))
-        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border));
+ 
     -webkit-transition: -webkit-filter 0.4s ease;
     transition: -webkit-filter 0.4s ease;
     -o-transition: filter 0.4s ease;
@@ -175,25 +166,10 @@
 .icon-button-border:hover{
     --dropdown-shadow-border-hovered: var(--slate-200);
 
-    -webkit-filter: 
-    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
--moz-filter: 
-    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
--ms-filter: 
-    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
--o-filter: 
-    drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
-    drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
+    filter: 
+        drop-shadow(-0.15px -0.15px 0px var(--dropdown-shadow-border-hovered))
+        drop-shadow(0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+        drop-shadow(-0.15px 0.15px 0px var(--dropdown-shadow-border-hovered))
+        drop-shadow(0.15px -0.15px 0px var(--dropdown-shadow-border-hovered));
 
 }

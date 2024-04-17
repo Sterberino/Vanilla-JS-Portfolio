@@ -39,6 +39,8 @@
     --blue-900	: rgb(30 58 138);
     --blue-950	: rgb(23 37 84);
     
+    --body-bg-color: rgb(7, 12, 24);
+
     --button-gradient-lighter: rgba(100, 116, 139,1);
     --button-gradient-darker: rgba(71, 85, 105,1);
     --dropdown-shadow-border: var(--slate-300);
