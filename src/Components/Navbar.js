@@ -20,12 +20,16 @@ export default function Navbar({ Resume, navbarOpen }) {
     const [buttonsOn, setButtonsOn] = React.useState(false);
     const [open, setOpen] = React.useState(true);
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
+        var y = (window.pageYOffset !== undefined) ?
+            window.pageYOffset :
+            (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
         if(!scrollingUp && !sidebarOpen)
         {
             setOpen(false);
         }
-        else if(((scrollingUp && !sidebarOpen) || window.scrollY <= 0) && !open)
+        else if(((scrollingUp && !sidebarOpen) || y <= 0) && !open)
         {
             setOpen(true);
         }
