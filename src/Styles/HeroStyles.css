@@ -43,6 +43,8 @@
 .hero-text{
     color: rgb(248, 250, 252); /*bg-slate-50*/
     font-family: var(--mono);
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 .hero-title-word{
