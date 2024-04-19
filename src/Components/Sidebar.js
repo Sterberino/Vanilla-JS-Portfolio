@@ -3,7 +3,6 @@ import '../Styles/SideBarStyles.css'
 import '../Styles/BodyElements.css'
 import '../Styles/NavbarStyles.css'
 
-import BackgroundSpotlightButton from "./BackgroundSpotlightButton";
 import { SidebarContext } from "../App";
 import Button from "./Button";
 

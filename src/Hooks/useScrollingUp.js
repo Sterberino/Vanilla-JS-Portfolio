@@ -12,7 +12,6 @@ const [offset, setOffset] = React.useState(window.scrollY || document.documentEl
             window.pageYOffset :
             (document.documentElement || document.body.parentNode || document.body).scrollTop;
             
-            console.log(y)
             if (st <= offset || (trueOnScrollTop && y <= 0)) {
                 //downscroll code   
                 setScrollingUp(true);
@@ -35,7 +34,7 @@ const [offset, setOffset] = React.useState(window.scrollY || document.documentEl
         return (() => {
             window.removeEventListener("scroll", ScrollHandle);
         })
-    }, [offset]);
+    }, [offset, trueOnScrollTop]);
 
 
     return scrollingUp;

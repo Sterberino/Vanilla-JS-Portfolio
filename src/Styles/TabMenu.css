@@ -26,18 +26,6 @@ body {
 
 
 
-
-.Test {
-    background-color: rgba(0,0,0,0);
-    height: 2400px;
-    width: 50%;
-    position: relative;
-    margin: 0 0 0 0;
-    display: inline-block;
-    left: calc(50% - calc(width / 2));
-    float: left;
-}
-
 /*
     .background:after {
         content: '';
@@ -376,7 +364,6 @@ ol li.DisableNumbering {
     float: left;
     margin-left: 0px;
     margin-right: 0px;
-    padding-top: calc(height/2);
     padding-left: 7px;
     padding-right: 7px;
     position: relative;
@@ -647,7 +634,6 @@ a.tabMenuButton {
         float: left;
         margin-left: 0px;
         margin-right: 0px;
-        padding-top: calc(height/2);
         padding-left: 7px;
         padding-right: 7px;
         position: relative;
