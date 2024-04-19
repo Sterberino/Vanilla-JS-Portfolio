@@ -3,6 +3,7 @@
 .background-spotlight-card{
     --mouse-x: 0px;
     --mouse-y: 0px;
+    /*Turned on and off when the mouse enters or leaves, respectively*/
     --spotlight-opacity: 0;
     --border-spotlight-opacity: 0;
 
@@ -26,21 +27,19 @@
     --mouse-y: inherit;
     --spotlight-opacity: inherit;
     --border-spotlight-opacity: inherit;
-    --card-color: rgba(19, 20, 21, 1);
     border-radius: inherit;
-
-
     content: '';
     position: absolute;
     transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
 
+/*after element is the background spotlight*/
 .background-spotlight-card::after{
     z-index: 0;
     inset: 0px;
     padding: 1px;
     position: absolute;
-    pointer-events: none;
 
     background-image: 
         radial-gradient(
@@ -55,18 +54,21 @@
     opacity: 1;
 }
 
+/*Before element is the border*/
 .background-spotlight-card::before{
+    --card-border-color: 248, 250, 252;
+
     z-index: -1;
     inset: 0;
+    padding: 1px;
 
-    --card-border-color: 248,250,252;
-
+    /*Mask controls, to keep the border colors from stretching across the whole div*/
     mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
     mask-composite: xor;
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 1px;
 
+    /*Linear Gradient is to keep the border when not moused over*/
     background-image: 
         radial-gradient(
             150px circle at var(--mouse-x) var(--mouse-y), 
@@ -76,10 +78,4 @@
             0deg, rgba(var(--card-border-color), 0.15) 0%, 
             rgba(var(--card-border-color), 0.15) 100%
         );
-}
-
-
-.cards-wrapper{
-    position: absolute;
-    inset: 0;
 }

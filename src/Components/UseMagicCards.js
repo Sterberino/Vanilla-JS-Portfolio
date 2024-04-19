@@ -39,7 +39,7 @@ const useMagicCards = (wrapperRef) =>{
                 element.removeEventListener('mousemove', handleMouseMove);
             }
         }
-    }, [])
+    }, [wrapperRef])
 
     const handleMouseMove = (e)=>{
         for (const card of cardsRef.current)

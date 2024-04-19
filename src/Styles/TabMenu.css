@@ -192,7 +192,6 @@ ol.inline {
     display: inline-block;
     list-style-type: decimal;
     box-sizing: border-box;
-    float: right;
     right: 2%;
     left: auto;
     box-sizing: border-box;
@@ -404,10 +403,6 @@ a.tabMenuButton {
 
 .regualarOpacity {
     opacity: 100%;
-}
-
-
-.Disabled {
 }
 
 

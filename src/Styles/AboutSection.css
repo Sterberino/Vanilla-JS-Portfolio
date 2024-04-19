@@ -1,0 +1,215 @@
+@import "./Constants.css";
+
+.AboutSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    width: 100%;
+    min-height: -webkit-max-content;
+    min-height: -moz-max-content;
+    min-height: max-content;
+    
+    height: 70vh;
+    
+    position: relative;
+    gap: 20px;
+
+    padding-top: 20vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    box-sizing: border-box;
+
+}
+
+.AboutSection:nth-child(1) {
+    float: left;
+}
+
+.about-description{
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    flex: 1;   
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--unfocused-text-color);
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    min-height: fit-content;
+}
+
+
+.about-description > p {
+    text-align: left;
+    text-anchor: start;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: var(--mono);
+    font-size: 0.9em;
+    opacity: 0;
+}
+
+
+
+.about-description > p.about-p-seen {
+    animation-name: about-p-seen-animation;
+    animation-duration: 0.4s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes about-p-seen-animation{
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.skillsets-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: start;
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    min-height: fit-content;
+}
+
+.skillset{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 90%;
+    height: 45px;
+    opacity: 0;
+    margin-bottom: 5px;
+}
+
+.skillset > p{
+    text-align: center;
+    position: absolute;
+    inset: 1px;
+    height: 100%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: inherit;
+
+    background-image: linear-gradient(
+        to top,       
+        rgba(0, 154, 183, 0.1) 0%,
+        transparent 80%
+    );
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Display an ellipsis (...) when the text overflows the container */
+    font-size: 14px; /* Initial font size */
+}
+
+.skillset > .skillset-icon{
+    background-image: linear-gradient(0deg, #757D85, #D8DBDD);
+    
+    height: 90%;
+    aspect-ratio: 1/1;
+    -webkit-mask-image: none;
+    -webkit-mask-size: cover;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+
+    mask-image: none;
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
+.skillset-animate{
+    animation-name: skillset-animation;
+    animation-duration: 0.4s;
+    animation-delay: 0.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes skillset-animation{
+    0%{
+        opacity: 0;
+        transform: translateX(80px);
+        filter: blur(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+        filter: blur(0px);
+    }
+}
+
+
+@media screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+    .AboutSection {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-top: 15vh;
+        margin-bottom: 40vh;
+    }
+
+    .AboutSection > p{ 
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+        -ms-grid-column-align: center;
+        justify-self: center;
+    }
+
+    .AboutSection > .imgOverlay {
+        min-width: 80%;
+        width: 80%;
+
+        aspect-ratio: 1 / 1 !important;
+        -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+        -ms-grid-column-align: center;
+        justify-self: center;
+    }
+
+    .skillsets-wrapper{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .AboutSection > p{
+        width: 90%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

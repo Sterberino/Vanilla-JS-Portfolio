@@ -15,7 +15,7 @@ const AnimatedSectionHeader = ({text}) => {
 
     return <h2
         className={(seen ? "hero-title-gradient" : "hero-title")}
-        style={{animationDelay: "0.25s"}}
+        style={{animationDelay: "0.25s", textAlign: "center"}}
         ref={ elementRef}
     >{text}</h2>
 }
