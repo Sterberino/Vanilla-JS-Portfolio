@@ -46,5 +46,10 @@
     --dropdown-shadow-border: var(--slate-300);
     --dropdown-shadow-border-hovered: var(--slate-200);
     --default-font-size: 0.9em;
+
+    --unfocused-text-color: rgb(210, 221, 231);
+    --off-white-text-gradient: linear-gradient(to right, var(--unfocused-text-color) 0%, var(--slate-50) 20%, var(--unfocused-text-color) 100%);
+
+
     --mono: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
 }

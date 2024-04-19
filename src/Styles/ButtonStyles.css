@@ -79,4 +79,5 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     background-image: linear-gradient(var(--slate-50), var(--slate-200) );
     background-clip: text;
     color: transparent;
+    font-family: var(--mono);
   }

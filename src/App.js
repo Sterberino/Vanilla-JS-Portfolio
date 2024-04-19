@@ -24,6 +24,8 @@ import IconFloaters from './Components/IconFloaters';
 
 import Hero from './Components/Hero.js';
 import Button from './Components/Button.js';
+import AnimatedSectionHeader from './Components/AnimatedSectionHeader.js'
+import ContactSection from './Components/ContactSection.js';
 
 const SidebarContext = React.createContext();
 export {SidebarContext}
@@ -85,10 +87,9 @@ function App()
 
             <Hero />
 
-            <div className="SectionBlock NotIntersected" id="AboutSection">
+            <section className="SectionBlock NotIntersected" id="AboutSection">
                 <div className="SectionHeader">
-
-                    <h1 className="GradientText">1. About</h1>
+                    <AnimatedSectionHeader text={"1. About"}/>
                     <div className="gradientBarRight"></div>
                 </div>
 
@@ -101,13 +102,12 @@ function App()
                     <div className="imgOverlay">
                         <img src={ProfileImage} />
                     </div>
-
                 </div>
-            </div>
+            </section>
 
             <div className="SectionBlock NotIntersected" id="ExperienceSection">
                 <div className="SectionHeader">
-                    <h1 className="GradientText">2. Experience</h1>
+                    <AnimatedSectionHeader text={"2. Experience"}/>
                     <div className="gradientBarRight"></div>
                 </div>
 
@@ -127,39 +127,14 @@ function App()
 
             <div className="SectionBlock NotIntersected" id="ProjectsSection">
                 <div className="SectionHeader">
-                    <h1 className="GradientText">3. Projects</h1>
+                    <AnimatedSectionHeader text={"3. Projects"}/>
                     <div className="gradientBarRight"></div>
                 </div>
 
                 <ProjectsGrid />
                  
             </div>
-
-
-            <div className="SectionBlock NotIntersected" id="ContactSection">
-                <div className="SectionHeader">
-                    <h1 className="GradientText">4. Get in Touch</h1>
-                    <div className="gradientBarRight"></div>
-                </div>
-
-                <div className="ContactSection">
-                    <h1 className="GradientText">Reach Out</h1>
-
-                    <div className="Text">
-                        I am excited to explore new opportunities, and I would love to hear from you! Send me an email and I'll get back to you soon.
-                    </div>
-                    <Button 
-                        onClick={()=>{
-                            let x=window.open("mailto:" + "zacharyruiz1" + "@gmail.com");
-                            x.close();
-                        }}
-                        text={"Contact Me"}
-                        style={{height: '40px', width: "120px", marginTop: "20px" }}
-                    />                
-                </div>
-      
-
-            </div>
+            <ContactSection />
         </div>
   );
 }
