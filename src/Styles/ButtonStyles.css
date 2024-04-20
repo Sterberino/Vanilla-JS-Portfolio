@@ -80,4 +80,5 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     background-clip: text;
     color: transparent;
     font-family: var(--mono);
+    white-space: nowrap;
   }
