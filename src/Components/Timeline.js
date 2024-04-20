@@ -25,7 +25,13 @@ const Timeline = () => {
     }, [size.x, alternating])
 
     return (
-        <div style={{ width: "100%", minHeight: "fit-content", paddingTop: "20vh" }} ref={elementRef}>
+        <div
+            style={{
+                width: "100%",
+                minHeight: "fit-content",
+                paddingTop: "20vh",
+                transform: `${(alternating ? "" : "translateX(-20px)") }`
+            }} ref={elementRef}>
             <Chrono
                 className="timeline"
                 mode={(alternating ? "VERTICAL_ALTERNATING" : "VERTICAL")}
