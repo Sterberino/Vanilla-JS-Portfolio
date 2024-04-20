@@ -77,7 +77,7 @@ const Timeline = () => {
                     odd={true}    
                 >
                     <p className="timeline-card-description">
-                        {`In March of 2024 I graduated from University of California, Riverside with a Bachelors of Computer Engineering. I took some time to rest and enjoy the accomplishment, and now I'm seeking exciting opportunities to apply and develop my skills. I'm ready to help you take your web applications from concept to deployment.`}
+                        {`In March of 2024 I graduated from University of California, Riverside with a Bachelor's of Science in Computer Engineering. I took some time to rest and enjoy the accomplishment, and now I'm seeking exciting opportunities to apply and develop my skills. I'm ready to help you take your web applications from concept to deployment.`}
                     </p>
                 </TimelineCard>
             </Chrono>
