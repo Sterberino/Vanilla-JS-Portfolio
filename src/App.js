@@ -5,8 +5,6 @@ import "./Styles/ResponsiveTabIcon.css"
 import "./Styles/ShowOnScrollStyles.css"
 import "./Styles/TabMenu.css"
 
-import AnimatedSectionHeader from './Components/AnimatedSectionHeader.js'
-import ExperienceImage from "./Images/Brain.png"
 import React from "react"
 import ProjectsGrid from "./Components/ProjectsGrid.js"
 import Navbar from "./Components/Navbar.js"
@@ -16,6 +14,7 @@ import Hero from './Components/Hero.js';
 import ContactSection from './Components/ContactSection.js';
 import AboutSection from './Components/AboutSection.js';
 import SectionHeader from './Components/SectionHeader.js';
+import ExperienceSection from './Components/ExperienceSection.js';
 
 
 const SidebarContext = React.createContext();
@@ -77,22 +76,7 @@ function App()
             </SidebarContext.Provider>
             <Hero />
             <AboutSection />
-            <section className="SectionBlock NotIntersected" id="ExperienceSection">
-                <SectionHeader text={"2. Experience"} />      
-                <div className="AboutSection">
-          
-                    <div className="imgOverlay">
-                        <img src={ExperienceImage} />
-                    </div>
-                    <p>
-                        I currently work as a Software Engineer Intern for the UCR Brain Game Center. During my time here I've built eyetracking tools using the Tobii Pro and Meta Quest Pro.
-                        These tools have been used for studying concussion symtpoms and scotoma central vision loss.
-                        I've learned so much about software development and working as part of a larger team while at the BGC, and now I'm ready to use what I've learned to help your enterprise.
-                    </p>
-                </div>
-            </section>
-
-
+            <ExperienceSection />
             <section className="SectionBlock NotIntersected" id="ProjectsSection">
                 <SectionHeader text={"3. Projects"} />
                 <ProjectsGrid />
