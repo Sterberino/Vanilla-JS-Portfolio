@@ -384,6 +384,15 @@
     color: var(--defaultTextColor);
 }
 
+.section-header > .hero-title-gradient, .hero-title{
+    --initial-shadow:
+        0 0 6px transparent, 
+        0 0 12px transparent;
+    --final-shadow:
+        0 0 6px rgba(137, 247, 254, 0.55), 
+        0 0 12px rgba(137, 247, 254, 0.55);
+}
+
 @media only screen and (max-device-width: 640px), only screen and (max-width: 640px) {    
     .Text {
         color: var(--defaultTextColor);
