@@ -32,7 +32,7 @@ export default function Navbar({ Resume, navbarOpen }) {
     }, [scrollingUp])
 
     return (
-        <div
+        <header
             style = {{
                 top: open ? "0px": "-70px"
             }} 
@@ -89,7 +89,7 @@ export default function Navbar({ Resume, navbarOpen }) {
                 {size.x <= 640 && 
                     <NavbarButton OnClickEvent={()=>{setSidebarOpen(prev => !prev)}}/>
                 }
-        </div>
+        </header>
         )
 
 }

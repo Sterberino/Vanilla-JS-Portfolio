@@ -47,27 +47,23 @@ function App()
     }, [])
 
     React.useEffect(() => {
-        function handleResize(){
-            if(size.x !== lastSize)
-            {
-                if (size.x >= 640 && lastSize < 640) {
-                    setSidebarOpen(false);
-                }
-                else if (size.x < 640 && lastSize >= 640) {        
-                    setSidebarOpen(false);
-                }        
+        if(size.x !== lastSize)
+        {
+            if (size.x >= 640 && lastSize < 640) {
+                setSidebarOpen(false);
             }
-            setLastSize(size.x);
+            else if (size.x < 640 && lastSize >= 640) {        
+                setSidebarOpen(false);
+            }        
         }
-    
-        handleResize()
+        setLastSize(size.x);
     }, [size])
 
     
  
 
     return (
-        <div style = {{overflow: 'hidden'}}>
+        <main style = {{overflow: 'hidden'}}>
             <div className="background"></div>           
             
             <SidebarContext.Provider value={{sidebarOpen: sidebarOpen, setSidebarOpen: setSidebarOpen}}>
@@ -82,7 +78,7 @@ function App()
                 <ProjectsGrid />
             </section>
             <ContactSection />
-        </div>
+        </main>
   );
 }
 
