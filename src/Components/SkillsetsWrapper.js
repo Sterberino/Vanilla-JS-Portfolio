@@ -6,7 +6,7 @@ import useMagicCards from "./UseMagicCards";
 import SkillSet from "./Skillset";
 import useWindowSize from "../Hooks/useWindowSize";
 
-const SkillsetsWrapper = ({ }) => { 
+const SkillsetsWrapper = () => { 
     const element = useRef(null);
     const onScreen = useOnScreen(element);
     useMagicCards(element);
@@ -16,7 +16,6 @@ const SkillsetsWrapper = ({ }) => {
     const [shortenedText, setShortenedText] = useState(size.x < 800);
 
     useEffect(() => { 
-        console.log(size.x);
         if ((size.x < 800 && size.x > 640) && !shortenedText)
         {
             setShortenedText(true);

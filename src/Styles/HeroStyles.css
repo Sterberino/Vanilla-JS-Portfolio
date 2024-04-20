@@ -87,6 +87,13 @@
 
 
 .hero-title-gradient{
+    --initial-shadow:
+        0 0 10px transparent, 
+        0 0 20px transparent;
+    --final-shadow:
+        0 0 10px #89f7fe, 
+        0 0 20px #89f7fe;
+
     color: transparent;
     background-image: linear-gradient(
         to right,
@@ -112,15 +119,11 @@
 @keyframes animated-text-gradient{
     0%{
         background-position: 0% 50%;
-        text-shadow: 
-        0 0 10px transparent, 
-        0 0 20px transparent;
+        text-shadow: var(--initial-shadow);
     }
     100%{
         background-position: 100% 50%;
-        text-shadow: 
-        0 0 10px #89f7fe, 
-        0 0 20px #89f7fe;
+        text-shadow: var(--final-shadow);
     }
 }
 

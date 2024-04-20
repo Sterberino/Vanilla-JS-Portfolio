@@ -6,7 +6,7 @@ import useMagicCards from "./UseMagicCards.js";
 import { useRef } from "react";
 
 export default function ProjectGrid() {
-    const wrapperRef = React.useRef(null);
+    const wrapperRef = useRef(null);
     useMagicCards(wrapperRef);
 
     const projects = Projects.data.map((project, index) => {

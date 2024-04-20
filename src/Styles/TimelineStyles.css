@@ -1,0 +1,169 @@
+@import "./Constants.css";
+
+/*For reasons that are beyond me, the devs of the timeline package I am using chose not to make the classes for the timeline easily accessible or customizable, so I have to use !important everywhere. Gross.*/
+.timeline-card{
+    border: 0 !important; 
+}
+
+.timeline-card-content.active.timeline-card, 
+.timeline-card-content.active.timeline-card::after, 
+.timeline-card-content.active.timeline-card::before, 
+.timeline-card-content.active.timeline-card::selection 
+{
+    color: transparent;
+    background-color: rgb(0,0,0,0) !important; 
+    background: rgb(0,0,0,0) !important;
+    border: 0 !important;
+    filter: none !important;
+    
+    mask-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+.timeline-card *{
+    overflow: hidden;
+    scroll-behavior: none;
+
+    border: 0 !important;
+}
+
+.timeline-card *:not(p)
+{
+    background-color: rgb(0,0,0,0)  !important; 
+}
+
+
+.timeline-vertical-circle{
+    cursor: default !important;
+}
+
+.timeline-vertical-circle *{
+    background-color: rgb(0,0,0,0)  !important; 
+    background: rgb(80,87,93,1) !important;
+    border: 0 !important;
+    width: 10px !important;
+    height: 10px !important;
+    cursor: default !important;
+}
+
+.timeline-hover-card{
+    width: 100%;
+    height: fit-content;
+    opacity: 0;
+}
+
+.timeline-hover-card-bg
+{
+    position: relative;
+    border-radius: inherit;
+    top: 0;
+    min-height: fit-content;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    background-image: linear-gradient(
+        to top,       
+        rgba(0, 154, 183, 0.05) 0%,
+        transparent 40%
+    ) !important;
+    box-shadow: 0px -3px 10px inset rgba(0, 154, 183, 0.05);
+}
+
+.timeline-card-animated{
+    --from: translateX(-80px);
+    --to: translateX(0px);
+    width: 95%;
+
+    animation-name: timeline-card-animation;
+    animation-duration: 0.65s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.3s;
+}
+
+.timeline-hover-card.timeline-card-animated-odd {
+    --from: translateX(-80px);
+    --to: translateX(0px);
+}
+
+.timeline-hover-card.timeline-card-animated-even {
+    --from: translateX(80px);
+    --to: translateX(0px);
+}
+
+@keyframes timeline-card-animation {
+    0%{
+        opacity: 0;
+        transform: var(--from);
+    }
+    100%{
+        opacity: 1;
+        transform: var(--to);
+    }
+}
+
+.timeline-card-header{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: fit-content;
+    height: 50px;
+    width: 100%;
+    overflow: visible;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.timeline-card-header > p{
+    margin: 0;
+    font-size: 0.8em;
+    flex-basis: 1;
+    text-align: left;
+    padding-left: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--slate-100);
+}
+
+.timeline-card-header .skillset-icon{
+    height: 75%;
+}
+
+.timeline-card .hero-title-gradient{
+    font-size: 0.96em;
+    padding: 0px;
+    --initial-shadow:
+        0 0 1px transparent ;
+    --final-shadow:
+        0 0 1px rgb(137, 247, 254, 0.6);
+    flex-grow: 1;
+}
+
+.timeline-card-description{
+    font-size: 0.8em;
+    font-family: var(--mono);
+    color: var( --unfocused-text-color);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 0px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px) {
+    .timeline-hover-card.timeline-card-animated-odd {
+        --from: translateX(50px);
+        --to: translateX(0px);
+    }
+
+    .timeline-hover-card.timeline-card-animated-even {
+        --from: translateX(50px);
+        --to: translateX(0px);
+    }
+}
