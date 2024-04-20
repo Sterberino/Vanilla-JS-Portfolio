@@ -384,8 +384,13 @@
     color: var(--defaultTextColor);
 }
 
-@media only screen and (max-device-width: 640px) {    
+@media only screen and (max-device-width: 640px), only screen and (max-width: 640px) {    
     .Text {
         color: var(--defaultTextColor);
+    }
+
+    .SectionBlock{
+        margin-top: 30vh;
+        margin-bottom: 0vh;
     }
 }
