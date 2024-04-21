@@ -37,7 +37,7 @@ export default {
         {
             key : 3,
             projectTitle: "Procedural Island Generator",
-            projectDescription: "A collection of precedural generation scripts that generate islands using Simplex Noise and Cellular Automata. It uses Unity's Job system, allowing for Safe multithreaded code, and Unity's Burst compiler which translates from IL /.NET bytecode to highly optimized native code using LLVM.",
+            projectDescription: "A collection of procedural generation scripts that generate islands using Simplex Noise and Cellular Automata. It uses Unity's Job system, allowing for Safe multithreaded code, and Unity's Burst compiler which translates from IL /.NET bytecode to highly optimized native code using LLVM.",
             projectImage: "./Images/IslandTexture.png",
             containImage: false,
             iconsArray: [
