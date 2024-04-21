@@ -81,6 +81,27 @@ const Timeline = () => {
                     </p>
                 </TimelineCard>
             </Chrono>
+            <div
+                className="blob"
+                style={{
+                    translate: "225% -70%",
+                    borderRadius: "100% 75% 92% 74% / 60% 80% 30% 70%"
+                }}>
+            </div>
+            <div
+                className="blob"
+                style={{
+                    translate: "-50% -180%",
+                    borderRadius: "100% 75% 92% 74% / 60% 80% 30% 70%"
+                }}>
+            </div>
+            <div
+                className="blob"
+                style={{
+                    translate: "250% -300%",
+                    borderRadius: "100% 75% 92% 74% / 60% 80% 30% 70%"
+                }}>
+            </div>
       </div>
     )
 }

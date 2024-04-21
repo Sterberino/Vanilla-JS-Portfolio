@@ -36,7 +36,7 @@ const TimelineCard = ({children, odd, headerText, headerIcon, date}) => {
             }}
             ref={elementRef}
         >
-            <div className="timeline-hover-card-bg">
+            <div className="card-gradient-bg">
                 <TimelineCardHeader text={headerText} icon={headerIcon} date={date}/>
                 {children}
             </div>

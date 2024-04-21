@@ -7,12 +7,18 @@
     --spotlight-opacity: 0;
     --border-spotlight-opacity: 0;
 
+    --card-border-color: 248,250,252;
+    /*rgba alpha value. Gets multiplied with the border-spotlight-opacity*/
+    --border-highlight-color-opacity: 0.35;
+    --spotlight-bg-color: 248,250,252;
+    /*rgba alpha value. Gets multiplied with the spotlight-opacity*/
+    --spotlight-bg-color-opacity: 0.15;
+
     position: relative;
     z-index: 1;
     
     border-radius: 10px;
-    cursor: pointer;
-
+    
     pointer-events: all;
     /*For centering text children*/
     display: flex;
@@ -27,6 +33,13 @@
     --mouse-y: inherit;
     --spotlight-opacity: inherit;
     --border-spotlight-opacity: inherit;
+    --card-border-color: inherit;
+    /*rgba alpha value. Gets multiplied with the border-spotlight-opacity*/
+    --border-highlight-color-opacity: inherit;
+    --spotlight-bg-color: inherit;
+    /*rgba alpha value. Gets multiplied with the spotlight-opacity*/
+    --spotlight-bg-color-opacity: inherit;
+
     border-radius: inherit;
     content: '';
     position: absolute;
@@ -44,7 +57,7 @@
     background-image: 
         radial-gradient(
             200px circle at var(--mouse-x) var(--mouse-y), 
-            rgba(248,250,252, calc(0.15 * var(--spotlight-opacity))) 0%, 
+            rgba(var(--card-border-color), calc(var(--spotlight-bg-color-opacity) * var(--spotlight-opacity))) 0%, 
             transparent 100%
         );    
     opacity: 0;
@@ -56,8 +69,6 @@
 
 /*Before element is the border*/
 .background-spotlight-card::before{
-    --card-border-color: 248, 250, 252;
-
     z-index: -1;
     inset: 0;
     padding: 1px;
@@ -73,7 +84,7 @@
         radial-gradient(
             150px circle at var(--mouse-x) var(--mouse-y), 
             rgba(var(--card-border-color), 
-            calc(0.35 * var(--border-spotlight-opacity))) 0%, transparent 100%),
+            calc(var(--border-highlight-color-opacity) * var(--border-spotlight-opacity))) 0%, transparent 100%),
         linear-gradient(
             0deg, rgba(var(--card-border-color), 0.15) 0%, 
             rgba(var(--card-border-color), 0.15) 100%

@@ -1,19 +1,44 @@
 // JavaScript source code
-import React from "react"
-import '../Styles/SpotlightProjectCard.css'
-import '../Styles/GridStyles.css'
+import React, { useEffect, useRef, useState } from "react"
+import useOnScreen from "../Hooks/useOnScreen";
+import AnimatedSectionHeader from "./AnimatedSectionHeader";
 
-export default function ProjectCard({projectTitle, projectDescription, projectImage, containImage, iconsArray}) {
+import '../Styles/SpotlightProjectCard.css';
+import '../Styles/GridStyles.css';
+import '../Styles/AboutSection.css';
+
+const ProjectCard = ({ projectTitle, projectDescription, projectImage, containImage, iconsArray }) => {    
+    const elementRef = useRef(null);
+    const onScreen = useOnScreen(elementRef);
+
     const [opacity, setOpacity] = React.useState(0);
+    const [seen, setSeen] = useState(onScreen);
     
-    const icons = iconsArray.map(icon => {
+    useEffect(() => { 
+        if (onScreen && !seen)
+        {
+            setSeen(true);    
+        }
+    }, [seen, onScreen])
+
+    const getHeader = () => { 
+        const icons = iconsArray.map(icon => {
+            return (
+                <a key={icon.key} href={icon.iconLink} target="_blank">
+                    <div className="skillset-icon" style={{ maskImage: `url("${icon.iconImage}")` }}></div>
+                </a>)
+        });
         return (
-            <a key={icon.key} href={icon.iconLink} target="_blank">
-                <img src={icon.iconImage} />
-            </a>)
-    })
-
-
+            <div className="title-row">
+                <h2 className="contact-section-gradient-header"> {projectTitle}</h2>
+                <span className="icons-row">
+                    {icons}
+                </span>
+            </div>
+        );
+    } 
+        
+    
     const handleMouseEnter = () => {
         setOpacity(1);
       };
@@ -22,30 +47,24 @@ export default function ProjectCard({projectTitle, projectDescription, projectIm
         setOpacity(0);
       };
     
-
     return (
         <div 
-            className="gridItem background-spotlight-card"
-            onMouseEnter={()=> {handleMouseEnter()}}
+            className={`gridItem background-spotlight-card${(seen ? " grid-card-animate" : "")}`}
+            ref={elementRef}
+            onMouseEnter={() => { handleMouseEnter() }}
             onMouseLeave={()=> {handleMouseLeave()}}
-            style = {{
+            style={{
+                "--spotlight-bg-color-opacity": 0,
                 "--spotlight-opacity" : opacity
             }}
         >
-            <div className="cardHeader">
-                <h5 className="GradientText">{projectTitle}</h5>
-                <div className="icons-wrapper">{icons}</div>
-
-            </div>
-            {/*<div className="imgOverlay">
-                <img className={containImage ? "containImage" : ""}  src={projectImage} width="720" height="720" />
-            </div>*/}
-
-            <div className="DescriptionContainer">
-                <p className="briefDescription">{projectDescription}</p>
+            <div className="card-gradient-bg">
+                <img className="project-image" src={projectImage }></img>
+                {getHeader()}
+                <p className="unfocused-text">{projectDescription }</p>
             </div>
         </div>
         )
-
-
 }
+
+export default ProjectCard;
