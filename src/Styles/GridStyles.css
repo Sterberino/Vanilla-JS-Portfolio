@@ -238,10 +238,10 @@ img.project-image{
     }
 
     .gridItem .contact-section-gradient-header{
-        font-size: calc(0.75rem + 1vw);
+        font-size: calc(0.7rem + 0.9vw);
     }
 
     .gridItem p{
-        font-size: calc(0.6rem + 0.7vw);
+        font-size: calc(0.6rem + 0.6vw);
     }
 }
