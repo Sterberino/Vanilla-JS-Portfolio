@@ -66,6 +66,7 @@
 {
     min-height: none !important;
     max-height: none !important;
+    height: 100% !important;
 
     position: absolute;
     inset: 0px !important;
