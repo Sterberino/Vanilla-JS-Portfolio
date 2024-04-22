@@ -38,7 +38,7 @@ export default {
             key : 3,
             projectTitle: "Procedural Island Generator",
             projectDescription: "A collection of procedural generation scripts that generate islands using Simplex Noise and Cellular Automata. It uses Unity's Job system, allowing for Safe multithreaded code, and Unity's Burst compiler which translates from IL /.NET bytecode to highly optimized native code using LLVM.",
-            projectImage: "./Images/IslandTexture.png",
+            projectImage: `${process.env.PUBLIC_URL}/Images/Procedural-Generation-image.png`,
             containImage: false,
             iconsArray: [
                 { key: 0, iconLink: "https://github.com/Sterberino/Procedural-Generation-Suite", iconImage: "./Images/Icon-White-Github.png" }
