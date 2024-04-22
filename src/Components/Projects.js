@@ -48,7 +48,7 @@ export default {
             key: 4,
             projectTitle: "RPG Project",
             projectDescription: "An RPG made with C# and Unity. This is a large project that includes: A Star Pathfinding, A custom quest system, A Branching Dialogue System, Saving and Loading, Melee and Gun Combat, Behavior trees, A custom cutscene system, and a lot more.",
-            projectImage: "./Images/RPG-Project-Thumbnail.png",
+            projectImage: `${process.env.PUBLIC_URL}/Images/Game-Showcase-Reduced-Size.gif`,
             containImage: false,
             iconsArray: [
                 { key: 0, iconLink: "https://github.com/Sterberino/RPG-Project-Public/blob/main/README.md", iconImage: "./Images/Icon-White-Github.png"},
