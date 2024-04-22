@@ -7,13 +7,14 @@ import '../Styles/SpotlightProjectCard.css';
 import '../Styles/GridStyles.css';
 import '../Styles/AboutSection.css';
 
-const ProjectCard = ({ projectTitle, projectDescription, projectImage, containImage, iconsArray }) => {    
+const ProjectCard = ({ projectTitle, projectDescription, projectImage, containImage, iconsArray, tags }) => {    
     const elementRef = useRef(null);
     const onScreen = useOnScreen(elementRef);
 
     const [opacity, setOpacity] = React.useState(0);
     const [seen, setSeen] = useState(onScreen);
     
+    console.log(JSON.stringify(tags))
     useEffect(() => { 
         if (onScreen && !seen)
         {
@@ -38,6 +39,19 @@ const ProjectCard = ({ projectTitle, projectDescription, projectImage, containIm
         );
     } 
         
+    const getTags = (tags) => { 
+        return (
+            <div className="project-card-tags">
+                {tags.map((tag) => { 
+                    return(
+                        <p className="unfocused-text">
+                            {tag}
+                        </p>
+                    )
+                })}
+            </div>
+        )
+    }
     
     const handleMouseEnter = () => {
         setOpacity(1);
@@ -62,6 +76,7 @@ const ProjectCard = ({ projectTitle, projectDescription, projectImage, containIm
                 <img className="project-image" src={projectImage }></img>
                 {getHeader()}
                 <p className="unfocused-text">{projectDescription }</p>
+                {getTags(tags)}
             </div>
         </div>
         )

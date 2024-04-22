@@ -17,6 +17,7 @@ export default function ProjectGrid() {
             projectImage={project.projectImage}
             containImage={project.containImage}
             iconsArray={project.iconsArray}
+            tags={project.tags}
         />
 
     });
