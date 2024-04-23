@@ -13,8 +13,7 @@ const ProjectCard = ({ projectTitle, projectDescription, projectImage, containIm
 
     const [opacity, setOpacity] = React.useState(0);
     const [seen, setSeen] = useState(onScreen);
-    
-    console.log(JSON.stringify(tags))
+
     useEffect(() => { 
         if (onScreen && !seen)
         {
