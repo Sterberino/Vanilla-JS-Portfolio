@@ -47,39 +47,56 @@ export default function Navbar({ Resume, navbarOpen }) {
                     <li className="nav-element">
                             <a 
                                 className = "nav-anchor" 
-                                onClick={()=>{
-                                    document.getElementById('AboutSection').scrollIntoView(); 
-                                    setSidebarOpen(false);
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    document.getElementById('AboutSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
+                                    if (sidebarOpen)
+                                    {                                    
+                                        setSidebarOpen(false);
+                                    }
                                 }}
                     >About</a></li>
                     <li className="nav-element">
                         <a 
                            className = "nav-anchor" 
-                           onClick={()=>{
-                               document.getElementById('ExperienceSection').scrollIntoView(); 
-                               setSidebarOpen(false);
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('ExperienceSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
+                                if (sidebarOpen)
+                                {                                    
+                                    setSidebarOpen(false);
+                                }
                            }}
                         >Experience</a></li>
                     <li className="nav-element">
                         <a 
                             className = "nav-anchor"
-                            onClick={()=>{
-                                document.getElementById('ProjectsSection').scrollIntoView(); 
-                                setSidebarOpen(false);
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('ProjectsSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
+                                if (sidebarOpen)
+                                {                                    
+                                    setSidebarOpen(false);
+                                }
                             }}
                         >Projects</a></li>
                     <li className="nav-element">
                         <a 
                             className = "nav-anchor"
-                            onClick={()=>{
-                                document.getElementById('ContactSection').scrollIntoView(); 
-                                setSidebarOpen(false);
+                            onClick={(e) => {
+                                e.preventDefault();
+                                document.getElementById('ContactSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
+                                if (sidebarOpen)
+                                {                                    
+                                    setSidebarOpen(false);
+                                }
                             }}
                         >Contact</a></li>
                     <li className="li-container">
                         <Button 
                             text = {"Resume"}
-                            onClick={()=>{
+                            onClick={(e) => {
+                                e.preventDefault();    
                                 window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
                             }}
                         />
