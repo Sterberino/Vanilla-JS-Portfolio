@@ -1,10 +1,23 @@
-import React, { useRef } from "react"
+import React, { useRef, useContext, useEffect } from "react"
+import { SidebarContext } from "../App";
 
 export default function NavbarButton({OnClickEvent }) {
-
+    const { sidebarOpen, setSidebarOpen } = useContext(SidebarContext);
+    
     const [open, setOpen] = React.useState(false);
     const [clickedOnce, setClickedOnce] = React.useState(false);
     const [buttonClickable, setButtonClickable] = React.useState(true);
+
+    useEffect(() => { 
+        if (sidebarOpen && !open)
+        {
+            setOpen(true)
+        }
+        else if (!sidebarOpen && open)
+        {
+            setOpen(false);    
+        }
+    }, [sidebarOpen])
 
     const getClassString = ()=> {
         if(!clickedOnce)

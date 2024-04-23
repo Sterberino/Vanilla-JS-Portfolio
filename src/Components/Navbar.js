@@ -49,11 +49,8 @@ export default function Navbar({ Resume, navbarOpen }) {
                                 className = "nav-anchor" 
                                 onClick={(e) => {
                                     e.preventDefault();
-                                    document.getElementById('AboutSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
-                                    if (sidebarOpen)
-                                    {                                    
-                                        setSidebarOpen(false);
-                                    }
+                                    document.getElementById('AboutSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });                              
+                                    setSidebarOpen(false);
                                 }}
                     >About</a></li>
                     <li className="nav-element">
@@ -62,10 +59,7 @@ export default function Navbar({ Resume, navbarOpen }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 document.getElementById('ExperienceSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
-                                if (sidebarOpen)
-                                {                                    
-                                    setSidebarOpen(false);
-                                }
+                                setSidebarOpen(false);
                            }}
                         >Experience</a></li>
                     <li className="nav-element">
@@ -74,10 +68,7 @@ export default function Navbar({ Resume, navbarOpen }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 document.getElementById('ProjectsSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
-                                if (sidebarOpen)
-                                {                                    
-                                    setSidebarOpen(false);
-                                }
+                                setSidebarOpen(false);
                             }}
                         >Projects</a></li>
                     <li className="nav-element">
@@ -86,10 +77,7 @@ export default function Navbar({ Resume, navbarOpen }) {
                             onClick={(e) => {
                                 e.preventDefault();
                                 document.getElementById('ContactSection').scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); 
-                                if (sidebarOpen)
-                                {                                    
-                                    setSidebarOpen(false);
-                                }
+                                setSidebarOpen(false);
                             }}
                         >Contact</a></li>
                     <li className="li-container">
