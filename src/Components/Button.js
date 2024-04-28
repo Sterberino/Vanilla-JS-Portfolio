@@ -4,9 +4,10 @@ const Button = ({onClick, text, style}) => {
     return (
         <button
             className="header-action"
-            onClick={() => {
+            onClick={(e) => {
                 if (onClick !== null && onClick !== undefined) {
-                    onClick();
+                    e.preventDefault()
+                    onClick(e);
                 }
             }}
             style={{...style}}

@@ -67,8 +67,8 @@ function App()
             <div className="background"></div>           
             
             <SidebarContext.Provider value={{sidebarOpen: sidebarOpen, setSidebarOpen: setSidebarOpen}}>
-                <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`} />
-                <Sidebar />
+                <Navbar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz Resume.pdf`} />
+                <Sidebar Resume={`${process.env.PUBLIC_URL}/Zachary Ruiz Resume.pdf`} />
             </SidebarContext.Provider>
             <Hero />
             <AboutSection />

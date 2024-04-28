@@ -84,8 +84,8 @@ export default function Navbar({ Resume, navbarOpen }) {
                         <Button 
                             text = {"Resume"}
                             onClick={(e) => {
-                                e.preventDefault();    
-                                window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
+                                e?.preventDefault();
+                                window.open(Resume, 'blank')
                             }}
                         />
                     </li>

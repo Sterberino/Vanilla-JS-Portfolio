@@ -6,7 +6,7 @@ import '../Styles/NavbarStyles.css'
 import { SidebarContext } from "../App";
 import Button from "./Button";
 
-export default function Sidebar()
+export default function Sidebar({ Resume})
 {   
     const {sidebarOpen, setSidebarOpen} = React.useContext(SidebarContext)
 
@@ -72,7 +72,7 @@ export default function Sidebar()
                         }}
                         text = {"Resume"}
                         onClick={()=>{
-                            window.open(`${process.env.PUBLIC_URL}/Zachary Ruiz - Software Engineer.pdf`, '_blank')
+                            window.open(Resume, 'blank')
                         }}
                     />
                 </div>            
